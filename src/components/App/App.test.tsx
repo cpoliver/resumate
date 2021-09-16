@@ -1,9 +1,10 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { App } from 'components';
+import { render, screen } from "@testing-library/react";
+import React from "react";
 
-test('renders the logo', async () => {
+import { App } from "components";
+
+test("renders the logo", async () => {
   render(<App />);
 
-  expect(await screen.findByTestId("logo")).toBeInTheDocument()
+  expect(await screen.findByTestId("logo")).toBeInTheDocument();
 });

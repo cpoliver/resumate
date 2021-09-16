@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import logo from 'logo.svg';
+import logo from "logo.svg";
 
 export const AppBar: React.FC = () => (
-    <header>
-      <img data-testid="logo" src={logo} alt="Killergram" />
-    </header>
-  );
+  <header>
+    <img alt="Killergram" data-testid="logo" src={logo} />
+  </header>
+);

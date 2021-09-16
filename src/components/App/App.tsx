@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import { AppBar } from "components"
+import { AppBar } from "components";
 
 export const App = () => (
-    <div>
-      <AppBar/>
-    </div>
-  );
+  <div>
+    <AppBar />
+  </div>
+);
