@@ -31,11 +31,23 @@
     "lint": "eslint './src/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install",
     "code-quality": "yarn lint --fix && yarn tsc",
-    "code-quality:full": "yarn code-quality && yarn test:no-watch"
+    "code-quality:full": "yarn code-quality && yarn test:no-watch",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "@iamcloud/eslint-config-iamcloud"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -52,6 +64,12 @@
   },
   "devDependencies": {
     "@iamcloud/eslint-config-iamcloud": "1.0.3",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/node-logger": "^6.3.8",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.8",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-import-resolver-typescript": "^2.0.0",
