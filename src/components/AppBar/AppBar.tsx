@@ -1,27 +1,33 @@
-import { Container, Flex, HStack, IconButton, Image, Input } from "@chakra-ui/react"
+import { Container, Flex, HStack, Image, Input } from "@chakra-ui/react"
 import React from "react"
 
+import { AppBarButtons } from "./AppBarButtons"
 import logo from "logo.svg"
 
 export const AppBar: React.FC = () => (
-  <Flex as="header" bg="tomato" p={4}>
+  <Flex
+    align="center"
+    as="header"
+    bg="white"
+    borderBottomColor="gray.300"
+    borderBottomWidth="1px"
+    h={14}
+    justify="space-between"
+    px={4}
+    py={1}
+  >
     <Container maxW="container.lg">
-      <HStack>
-        <Image alt="Killergram" data-testid="logo" h={32} src={logo} />
-        <Input placeholder="search" />
-        <Nav />
+      <HStack align="center" spacing={2}>
+        <Flex flex={1}>
+          <Image alt="Killergram" data-testid="logo" h={6} src={logo} />
+        </Flex>
+
+        <Flex flex={1} justify="center">
+          <Input bg="gray.50" maxW="215px" placeholder="Search" size="sm" textAlign="center" />
+        </Flex>
+
+        <AppBarButtons />
       </HStack>
     </Container>
   </Flex>
-)
-
-const Nav: React.FC = () => (
-  <HStack>
-    <IconButton aria-label="Home" />
-    <IconButton aria-label="Direct messages" />
-    <IconButton aria-label="New post" />
-    <IconButton aria-label="Find people" />
-    <IconButton aria-label="Activity feed" />
-    <IconButton aria-label="Profile" />
-  </HStack>
 )

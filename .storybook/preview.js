@@ -1,11 +1,13 @@
 import React from "react"
 import { ChakraProvider } from "@chakra-ui/react"
 
+import { ThemeProvider } from "../src/components"
+
 export const decorators = [
   (Story) => (
-    <ChakraProvider>
+    <ThemeProvider>
       <Story />
-    </ChakraProvider>
+    </ThemeProvider>
   )
 ]
 
