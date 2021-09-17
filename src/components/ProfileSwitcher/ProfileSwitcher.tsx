@@ -1,10 +1,9 @@
-import { Container, Flex, Image, Input, Stack } from "@chakra-ui/react"
+import { Container, Flex, HStack, Image, Input } from "@chakra-ui/react"
 import React from "react"
 
-import { AppBarButtons } from "./AppBarButtons"
 import logo from "logo.svg"
 
-export const AppBar: React.FC = () => (
+export const ProfileSwitcher: React.FC = () => (
   <Flex
     align="center"
     as="header"
@@ -17,7 +16,7 @@ export const AppBar: React.FC = () => (
     py={1}
   >
     <Container maxW="container.lg">
-      <Stack align="center" direction="row" spacing={2}>
+      <HStack align="center" spacing={2}>
         <Flex flex={1}>
           <Image alt="Killergram" data-testid="logo" h={6} src={logo} />
         </Flex>
@@ -25,9 +24,7 @@ export const AppBar: React.FC = () => (
         <Flex flex={1} justify="center">
           <Input bg="gray.50" maxW="215px" placeholder="Search" size="sm" textAlign="center" />
         </Flex>
-
-        <AppBarButtons />
-      </Stack>
+      </HStack>
     </Container>
   </Flex>
 )

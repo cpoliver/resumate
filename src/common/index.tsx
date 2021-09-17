@@ -1,40 +1,9 @@
-export const mock = {
-  profile: {
-    profile_picture: "https://flynn.boolean.careers/exercises/img/boolgram/profile1.jpg",
-    profile_name: "uhessel",
-  },
-  profiles: [
-    {
-      profile_picture: "https://flynn.boolean.careers/exercises/img/boolgram/profile1.jpg",
-      profile_name: "price.alaina",
-    },
-    {
-      profile_picture: "https://flynn.boolean.careers/exercises/img/boolgram/profile2.jpg",
-      profile_name: "imogene06",
-    },
-    {
-      profile_picture: "https://flynn.boolean.careers/exercises/img/boolgram/profile3.jpg",
-      profile_name: "durgan.trudie",
-    },
-    {
-      profile_picture: "https://flynn.boolean.careers/exercises/img/boolgram/profile4.jpg",
-      profile_name: "berge.marianne",
-    },
-    {
-      profile_picture: "https://flynn.boolean.careers/exercises/img/boolgram/profile5.jpg",
-      profile_name: "ucorkery",
-    },
-    {
-      profile_picture: "https://flynn.boolean.careers/exercises/img/boolgram/profile6.jpg",
-      profile_name: "wunsch.gaston",
-    },
-    {
-      profile_picture: "https://flynn.boolean.careers/exercises/img/boolgram/profile7.jpg",
-      profile_name: "vschinner",
-    },
-    {
-      profile_picture: "https://flynn.boolean.careers/exercises/img/boolgram/profile8.jpg",
-      profile_name: "jennifer64",
-    },
-  ],
-}
+import posts from "data/posts.json"
+import profiles from "data/profiles.json"
+
+const post = posts[0]
+const profile = profiles[0]
+
+export type Profile = typeof profile
+
+export type Post = typeof post
