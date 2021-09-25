@@ -3,7 +3,7 @@ import React from "react"
 
 import * as Button from "../Button"
 import { Footer } from "./Footer"
-import type { CommentProps, DateProps, PostProps } from "common"
+import type { Comment as CommentProps, Date, Post as PostProps } from "common"
 
 export const Post: React.FC<PostProps> = (post) => (
   <Stack bg="white" borderColor="gray.300" borderWidth="1px" flex={1} fontSize="sm" spacing={0}>
@@ -47,16 +47,22 @@ const Likes: React.FC<PostProps> = ({ likes = [] }) =>
     </Text>
   ) : null
 
-const Comment: React.FC<CommentProps & StackProps> = ({ username, text, ...stackProps }) => (
+const Comment: React.FC<StackProps & CommentProps & { canLike?: boolean }> = ({
+  username,
+  text,
+  canLike = false,
+  ...stackProps
+}) => (
   <Stack direction="row" spacing={1} {...stackProps}>
     <Link color="gray.900" fontWeight="semibold">
       {username}
     </Link>
-    <Text>{text}</Text>
+    <Text flex={1}>{text}</Text>
+    {canLike && <Button.LikeButton iconProps={{ boxSize: 3 }} size="xs" />}
   </Stack>
 )
 
-const getDaysAgo = ({ date }: DateProps) => {
+const getDaysAgo = ({ date }: Date) => {
   const oneDayInMs = 1000 * 60 * 60 * 24
   const diffInTime = new Date().getTime() - new Date(date).getTime()
 
@@ -65,12 +71,12 @@ const getDaysAgo = ({ date }: DateProps) => {
 
 const Comments: React.FC<PostProps> = ({ date, comments = [] }) =>
   comments.length > 0 ? (
-    <Stack pb={4} px={4} spacing={1}>
+    <Stack pb={4} pl={4} pr={2} spacing={1}>
       {comments.length > 2 && <Link color="gray.500">View all {comments.length} comments</Link>}
 
       <Stack spacing={0}>
         {comments.slice(0, 2).map((comment, i) => (
-          <Comment key={i} {...comment} />
+          <Comment key={i} {...comment} canLike />
         ))}
       </Stack>
 

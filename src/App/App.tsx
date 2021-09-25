@@ -22,7 +22,7 @@ export const App: React.FC = () => (
 )
 
 const Content: React.FC = () => (
-  <Stack as="main" flex={2} spacing={8}>
+  <Stack as="main" flex={2} spacing={6}>
     <FollowedList />
     {posts.map((post) => (
       <Post key={post.date.date} {...post} />

@@ -1,9 +1,12 @@
-import { IconButton, IconButtonProps } from "@chakra-ui/react"
+import { IconButton, IconButtonProps, IconProps } from "@chakra-ui/react"
 import React, { useState } from "react"
 
 import * as Icon from "../Icon/Icon"
 
-type ToggleButtonInstanceProps = Omit<IconButtonProps, "icon" | "aria-label"> & { isToggled?: boolean }
+type ToggleButtonInstanceProps = Omit<IconButtonProps, "icon" | "aria-label"> & {
+  isToggled?: boolean
+  iconProps?: IconProps
+}
 
 type ToggleButtonProps = ToggleButtonInstanceProps & {
   icons: [toggled: React.ReactElement, untoggled: React.ReactElement]
@@ -16,6 +19,7 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
   icons,
   labels,
   isToggled: defaultIsToggled,
+  iconProps,
   ...iconButtonProps
 }) => {
   const [isToggled, setIsToggled] = useState(defaultIsToggled)
@@ -32,18 +36,25 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
   return <IconButton variant="plain" {...props} onClick={() => setIsToggled(!isToggled)} />
 }
 
-export const LikeButton: React.FC<ToggleButtonInstanceProps> = ({ isToggled = false }) => (
+export const LikeButton: React.FC<ToggleButtonInstanceProps> = ({ isToggled = false, iconProps, ...buttonProps }) => (
   <ToggleButton
-    icons={[<Icon.HeartFilledIcon key="toggled" />, <Icon.HeartOutlineIcon key="untoggled" />]}
+    {...buttonProps}
+    icons={[
+      <Icon.HeartFilledIcon {...(iconProps as any)} key="toggled" />,
+      <Icon.HeartOutlineIcon {...(iconProps as any)} key="untoggled" />,
+    ]}
     isToggled={isToggled}
     labels={["Unlike", "Like"]}
   />
 )
 
-export const SaveButton: React.FC<ToggleButtonInstanceProps> = ({ isToggled = false, ...buttonProps }) => (
+export const SaveButton: React.FC<ToggleButtonInstanceProps> = ({ isToggled = false, iconProps, ...buttonProps }) => (
   <ToggleButton
     {...buttonProps}
-    icons={[<Icon.SaveFilledIcon key="toggled" />, <Icon.SaveOutlineIcon key="untoggled" />]}
+    icons={[
+      <Icon.SaveFilledIcon {...(iconProps as any)} key="toggled" />,
+      <Icon.SaveOutlineIcon {...(iconProps as any)} key="untoggled" />,
+    ]}
     labels={["Remove", "Save"]}
   />
 )
