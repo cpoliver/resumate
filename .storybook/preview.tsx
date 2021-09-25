@@ -1,12 +1,12 @@
 import React from "react"
-import { ChakraProvider } from "@chakra-ui/react"
+import { Flex  } from "@chakra-ui/react"
 
 import { ThemeProvider } from "../src/components"
 
 export const decorators = [
   (Story) => (
     <ThemeProvider>
-      <Story />
+        <Story />
     </ThemeProvider>
   )
 ]
