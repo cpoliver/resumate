@@ -1,4 +1,4 @@
-import { Container, Flex, Stack } from "@chakra-ui/react"
+import { Container, Flex, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { posts, profiles } from "common"
@@ -30,8 +30,11 @@ const Content: React.FC = () => (
 )
 
 const SideBar: React.FC = () => (
-  <Flex as="aside" flex={1}>
-    <ProfileSwitcher />
+  <Stack as="aside" flex={1}>
+    <ProfileSwitcher {...posts[0]} />
     <SuggestionList />
-  </Flex>
+    <Text color="gray.300" fontSize="xs" textTransform="uppercase">
+      &copy; {new Date().getFullYear()} Killagram from Charlie
+    </Text>
+  </Stack>
 )
