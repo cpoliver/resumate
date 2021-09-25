@@ -26,9 +26,10 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
     ...iconButtonProps,
     "aria-label": labels[index],
     icon: icons[index],
+    outline: "none",
   }
 
-  return <IconButton {...props} onClick={() => setIsToggled(!isToggled)} />
+  return <IconButton variant="plain" {...props} onClick={() => setIsToggled(!isToggled)} />
 }
 
 export const LikeButton: React.FC<ToggleButtonInstanceProps> = ({ isToggled = false }) => (

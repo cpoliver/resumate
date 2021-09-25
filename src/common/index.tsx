@@ -1,9 +1,18 @@
 import posts from "data/posts.json"
 import profiles from "data/profiles.json"
 
-const post = posts[0]
-const profile = profiles[0]
+export { posts }
 
-export type Profile = typeof profile
+export const post = posts[0]
 
-export type Post = typeof post
+export const profile = profiles[0]
+
+export type ProfileProps = typeof profile
+
+export type PostProps = typeof post
+
+export type CommentProps = typeof post.comments[0]
+
+export type LikeProps = typeof post.likes[0]
+
+export type DateProps = typeof post.date

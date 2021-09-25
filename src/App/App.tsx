@@ -1,8 +1,8 @@
 import { Container, Flex, Stack } from "@chakra-ui/react"
 import React from "react"
 
+import { posts } from "common"
 import { AppBar, Post, ProfileSwitcher } from "components"
-import posts from "data/posts.json"
 
 const FollowedList = Flex
 const SuggestionList = Flex
@@ -12,7 +12,7 @@ export const App: React.FC = () => (
     <AppBar />
     <Flex bg="gray.50" flex={1}>
       <Container flex={1} maxW="container.lg" minH="100vh" my={20} overflow="auto">
-        <Stack bg="rgba(0,0,0,.2)" direction="row" flex={1} spacing={8}>
+        <Stack direction="row" flex={1} spacing={8}>
           <Content />
           <Aside />
         </Stack>

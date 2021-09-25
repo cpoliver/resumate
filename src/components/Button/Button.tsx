@@ -2,6 +2,7 @@ import { Avatar, IconButton, IconButtonProps } from "@chakra-ui/react"
 import React from "react"
 
 import * as Icon from "../Icon/Icon"
+import avatarSrc from "common/avatar.png"
 
 export type ButtonProps = Omit<IconButtonProps, "aria-label">
 
@@ -38,5 +39,10 @@ export const NewPostButton: React.FC<ButtonProps> = (buttonProps) => (
 )
 
 export const ProfileButton: React.FC<ButtonProps> = (buttonProps) => (
-  <IconButton variant="plain" {...buttonProps} aria-label="Profile menu" icon={<Avatar name="C O" size="xs" />} />
+  <IconButton
+    variant="plain"
+    {...buttonProps}
+    aria-label="Profile menu"
+    icon={<Avatar bg="secondary" name="Charles Oliver" p={1} size="xs" src={avatarSrc} />}
+  />
 )

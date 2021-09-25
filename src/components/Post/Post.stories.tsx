@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
 import { Post } from "./Post"
-import { mock } from "data"
+import { post } from "common"
 
 export default {
   title: "Post",
@@ -16,8 +16,8 @@ const Template: ComponentStory<typeof Post> = (args) => (
   </Flex>
 )
 
-export const New = Template.bind({})
-New.args = mock.posts[0]
-
 export const WithComments = Template.bind({})
-WithComments.args = { ...mock.posts[1], comments: [], likes: [] }
+WithComments.args = post
+
+export const New = Template.bind({})
+New.args = { ...post, comments: [], likes: [] }

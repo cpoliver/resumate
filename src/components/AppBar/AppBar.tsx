@@ -22,22 +22,28 @@ export const AppBar: React.FC = () => (
   >
     <Container maxW="container.lg">
       <Stack align="center" direction="row" spacing={2}>
-        <Flex flex={1}>
-          <Image alt="Killergram" data-testid="logo" h={6} src={logo} />
-        </Flex>
-
-        <Flex flex={1} justify="center">
-          <Input bg="gray.50" maxW="215px" placeholder="Search" size="sm" textAlign="center" />
-        </Flex>
-
-        <AppBarButtons />
+        <Logo />
+        <Search />
+        <Nav />
       </Stack>
     </Container>
   </Flex>
 )
 
-const AppBarButtons: React.FC = () => (
-  <Stack direction="row" flex={1} justifyContent="flex-end">
+const Logo: React.FC = () => (
+  <Flex color="gray.900" flex={1}>
+    <Image alt="Killergram" data-testid="logo" h={7} src={logo} />
+  </Flex>
+)
+
+const Search: React.FC = () => (
+  <Flex flex={1} justify="center">
+    <Input bg="gray.50" maxW="215px" placeholder="Search" size="sm" textAlign="center" />
+  </Flex>
+)
+
+const Nav: React.FC = () => (
+  <Stack as="nav" direction="row" flex={1} justifyContent="flex-end" spacing={2}>
     <Button.HomeButton />
     <Button.DirectMessagesButton />
     <Button.NewPostButton />
