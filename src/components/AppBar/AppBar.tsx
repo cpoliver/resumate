@@ -13,8 +13,12 @@ export const AppBar: React.FC = () => (
     borderBottomWidth="1px"
     h={14}
     justify="space-between"
+    left={0}
+    pos="fixed"
     px={4}
     py={1}
+    right={0}
+    zIndex="banner"
   >
     <Container maxW="container.lg">
       <Stack align="center" direction="row" spacing={2}>
