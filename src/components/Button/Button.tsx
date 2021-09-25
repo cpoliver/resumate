@@ -3,9 +3,11 @@ import React from "react"
 
 type ButtonProps = Omit<IconButtonProps, "aria-label">
 
-type HeartButtonProps = IconButtonProps & { isLiked?: boolean }
+type ToggleProps = { isToggled?: boolean }
 
-const HeartButton: React.FC<HeartButtonProps> = ({ isLiked = false, ...buttonProps }) => (
+type ToggleButtonProps = ButtonProps & ToggleProps
+
+const HeartButton: React.FC<IconButtonProps & ToggleProps> = ({ isToggled = false, ...buttonProps }) => (
   <IconButton
     {...buttonProps}
     icon={
@@ -21,13 +23,31 @@ export const ActivityFeedButton: React.FC<ButtonProps> = (buttonProps) => (
   <HeartButton {...buttonProps} aria-label="Activity feed" />
 )
 
+export const SaveButton: React.FC<ToggleButtonProps> = ({ isToggled = false, ...buttonProps }) => (
+  <IconButton
+    {...buttonProps}
+    aria-label={isToggled ? "Remove" : "Save"}
+    icon={
+      <Icon color="currentColor" viewBox="0 0 48 48" width="22">
+        <path d="M24 48C10.8 48 0 37.2 0 24S10.8 0 24 0s24 10.8 24 24-10.8 24-24 24zm0-45C12.4 3 3 12.4 3 24s9.4 21 21 21 21-9.4 21-21S35.6 3 24 3z"></path>
+        <path d="M34.9 24c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5 1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5zm-21.8 0c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5zM24 37.3c-5.2 0-8-3.5-8.2-3.7-.5-.6-.4-1.6.2-2.1.6-.5 1.6-.4 2.1.2.1.1 2.1 2.5 5.8 2.5 3.7 0 5.8-2.5 5.8-2.5.5-.6 1.5-.7 2.1-.2.6.5.7 1.5.2 2.1 0 .2-2.8 3.7-8 3.7z"></path>
+      </Icon>
+    }
+    variant="nav"
+  />
+)
+
 export const CommentButton: React.FC<ButtonProps> = (buttonProps) => (
   <IconButton
     {...buttonProps}
-    aria-label="Direct messages"
+    aria-label="Comment"
     icon={
       <Icon color="currentColor" viewBox="0 0 48 48" width="22">
-        <path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z"></path>
+        <path
+          clip-rule="evenodd"
+          d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+          fill-rule="evenodd"
+        ></path>
       </Icon>
     }
     variant="post"
@@ -41,6 +61,35 @@ export const DirectMessagesButton: React.FC<ButtonProps> = (buttonProps) => (
     icon={
       <Icon color="currentColor" viewBox="0 0 48 48" width="22">
         <path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z"></path>
+      </Icon>
+    }
+    variant="nav"
+  />
+)
+
+export const EllipsisButton: React.FC<ButtonProps> = (buttonProps) => (
+  <IconButton
+    {...buttonProps}
+    aria-label="MoreOptions"
+    icon={
+      <Icon color="currentColor" viewBox="0 0 48 48" width="22">
+        <circle cx="12" cy="12" r="1.5"></circle>
+        <circle cx="6.5" cy="12" r="1.5"></circle>
+        <circle cx="17.5" cy="12" r="1.5"></circle>
+      </Icon>
+    }
+    variant="nav"
+  />
+)
+
+export const EmojiButton: React.FC<ButtonProps> = (buttonProps) => (
+  <IconButton
+    {...buttonProps}
+    aria-label="Emoji"
+    icon={
+      <Icon color="currentColor" viewBox="0 0 48 48" width="22">
+        <path d="M24 48C10.8 48 0 37.2 0 24S10.8 0 24 0s24 10.8 24 24-10.8 24-24 24zm0-45C12.4 3 3 12.4 3 24s9.4 21 21 21 21-9.4 21-21S35.6 3 24 3z"></path>
+        <path d="M34.9 24c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5 1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5zm-21.8 0c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5zM24 37.3c-5.2 0-8-3.5-8.2-3.7-.5-.6-.4-1.6.2-2.1.6-.5 1.6-.4 2.1.2.1.1 2.1 2.5 5.8 2.5 3.7 0 5.8-2.5 5.8-2.5.5-.6 1.5-.7 2.1-.2.6.5.7 1.5.2 2.1 0 .2-2.8 3.7-8 3.7z"></path>
       </Icon>
     }
     variant="nav"
@@ -77,8 +126,8 @@ export const HomeButton: React.FC<ButtonProps> = (buttonProps) => (
   />
 )
 
-export const LikeButton: React.FC<Pick<HeartButtonProps, "isLiked">> = ({ isLiked = false }) => (
-  <HeartButton aria-label={isLiked ? "Unlike" : "Like"} isLiked={isLiked} />
+export const LikeButton: React.FC<Pick<ToggleButtonProps, "isToggled">> = ({ isToggled = false }) => (
+  <HeartButton aria-label={isToggled ? "Unlike" : "Like"} isToggled={isToggled} />
 )
 
 export const NewPostButton: React.FC<ButtonProps> = (buttonProps) => (
