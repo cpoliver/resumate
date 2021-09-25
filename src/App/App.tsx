@@ -1,10 +1,8 @@
 import { Container, Flex, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
-import { posts, profiles } from "common"
-import { AppBar, Following, Post, ProfileSwitcher } from "components"
-
-const SuggestionList = Flex
+import { posts, profiles, suggestions } from "common"
+import { AppBar, Following, Post, ProfileSwitcher, Suggestion, Suggestions } from "components"
 
 export const App: React.FC = () => (
   <Stack bottom={0} flex={1} left={0} pos="absolute" right={0} spacing={0} top={0}>
@@ -30,10 +28,10 @@ const Content: React.FC = () => (
 )
 
 const SideBar: React.FC = () => (
-  <Stack as="aside" flex={1}>
+  <Stack as="aside" flex={1} spacing={6}>
     <ProfileSwitcher {...posts[0]} />
-    <SuggestionList />
-    <Text color="gray.300" fontSize="xs" textTransform="uppercase">
+    <Suggestions suggestions={suggestions as Suggestion[]} />
+    <Text color="gray.400" fontSize="xs" textTransform="uppercase">
       &copy; {new Date().getFullYear()} Killagram from Charlie
     </Text>
   </Stack>

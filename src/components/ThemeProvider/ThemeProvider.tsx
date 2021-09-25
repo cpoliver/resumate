@@ -13,7 +13,6 @@ const layerStyles = {
     borderColor: "gray.900",
     borderRadius: "full",
     borderWidth: "2px",
-    ml: 2,
     p: "2px",
   },
 }

@@ -1,7 +1,8 @@
 import posts from "data/posts.json"
 import profiles from "data/profiles.json"
+import suggestions from "data/suggestions.json"
 
-export { posts, profiles }
+export { posts, profiles, suggestions }
 
 export const post = posts[0]
 
