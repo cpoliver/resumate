@@ -2,7 +2,7 @@ import { Container, Flex, Image, Input, Link, Stack } from "@chakra-ui/react"
 import React from "react"
 
 import * as Button from "../Button/Button"
-import { focusStyles } from "components"
+import { focusStyles } from "../ThemeProvider/utils"
 import logo from "logo.svg"
 
 export const AppBar: React.FC = () => (

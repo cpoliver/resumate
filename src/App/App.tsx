@@ -1,20 +1,19 @@
 import { Container, Flex, Stack } from "@chakra-ui/react"
 import React from "react"
 
-import { posts } from "common"
-import { AppBar, Post, ProfileSwitcher } from "components"
+import { posts, profiles } from "common"
+import { AppBar, Following, Post, ProfileSwitcher } from "components"
 
-const FollowedList = Flex
 const SuggestionList = Flex
 
 export const App: React.FC = () => (
   <Stack bottom={0} flex={1} left={0} pos="absolute" right={0} spacing={0} top={0}>
     <AppBar />
-    <Flex bg="gray.50" flex={1}>
+    <Flex as="main" bg="gray.50" flex={1}>
       <Container flex={1} maxW="container.lg" minH="100vh" my={20} overflow="auto">
         <Stack direction="row" flex={1} spacing={8}>
           <Content />
-          <Aside />
+          <SideBar />
         </Stack>
       </Container>
     </Flex>
@@ -22,16 +21,16 @@ export const App: React.FC = () => (
 )
 
 const Content: React.FC = () => (
-  <Stack as="main" flex={2} spacing={6}>
-    <FollowedList />
+  <Stack as="section" flex={2} spacing={6}>
+    <Following profiles={profiles} />
     {posts.map((post) => (
       <Post key={post.date.date} {...post} />
     ))}
   </Stack>
 )
 
-const Aside: React.FC = () => (
-  <Flex flex={1}>
+const SideBar: React.FC = () => (
+  <Flex as="aside" flex={1}>
     <ProfileSwitcher />
     <SuggestionList />
   </Flex>

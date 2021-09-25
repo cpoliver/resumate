@@ -19,8 +19,8 @@ export const Post: React.FC<PostProps> = (post) => (
 
 const Header: React.FC<PostProps> = ({ profile_name, profile_picture }) => (
   <Stack align="center" bg="gray.50" direction="row" p={2} spacing={3}>
-    <Box borderColor="gray.900" borderRadius="full" borderWidth="2px" ml={2} p="2px">
-      <Avatar size="sm" src={profile_picture} />
+    <Box layerStyle="avatarBorder">
+      <Avatar name={profile_name} size="sm" src={profile_picture} />
     </Box>
     <Text flex={1} fontWeight="semibold">
       {/* real Instagram uses the name, not fullname */}
