@@ -10,6 +10,11 @@ const theme = extendTheme({
             bg: "none",
           },
         },
+        post: {
+          _hover: {
+            bg: "none",
+          },
+        },
       },
     },
   },

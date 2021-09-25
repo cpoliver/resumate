@@ -1,7 +1,7 @@
 import { Container, Flex, Image, Input, Stack } from "@chakra-ui/react"
 import React from "react"
 
-import { AppBarButtons } from "./AppBarButtons"
+import * as Buttons from "../Button/Button"
 import logo from "logo.svg"
 
 export const AppBar: React.FC = () => (
@@ -30,4 +30,15 @@ export const AppBar: React.FC = () => (
       </Stack>
     </Container>
   </Flex>
+)
+
+const AppBarButtons: React.FC = () => (
+  <Stack direction="row" flex={1} justifyContent="flex-end">
+    <Buttons.HomeButton />
+    <Buttons.DirectMessagesButton />
+    <Buttons.NewPostButton />
+    <Buttons.FindPeopleButton />
+    <Buttons.ActivityFeedButton />
+    <Buttons.ProfileButton />
+  </Stack>
 )
