@@ -18,7 +18,7 @@ export const DirectMessagesButton: React.FC<ButtonProps> = (buttonProps) => (
 )
 
 export const EllipsisButton: React.FC<ButtonProps> = (buttonProps) => (
-  <IconButton variant="plain" {...buttonProps} aria-label="MoreOptions" icon={<Icon.EllipsisIcon />} />
+  <IconButton variant="plain" {...buttonProps} aria-label="More options" icon={<Icon.EllipsisIcon />} />
 )
 
 export const EmojiButton: React.FC<ButtonProps> = (buttonProps) => (
@@ -38,5 +38,5 @@ export const NewPostButton: React.FC<ButtonProps> = (buttonProps) => (
 )
 
 export const ProfileButton: React.FC<ButtonProps> = (buttonProps) => (
-  <IconButton variant="plain" {...buttonProps} aria-label="Activity feed" icon={<Avatar name="C O" size="xs" />} />
+  <IconButton variant="plain" {...buttonProps} aria-label="Profile menu" icon={<Avatar name="C O" size="xs" />} />
 )
