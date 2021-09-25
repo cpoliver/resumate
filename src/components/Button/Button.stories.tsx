@@ -1,16 +1,18 @@
-import { IconButton, Stack } from "@chakra-ui/react"
-import { ComponentMeta } from "@storybook/react"
+import { Stack } from "@chakra-ui/react"
+import { Meta } from "@storybook/react"
 import React from "react"
 
 import * as Button from "./Button"
 
 export default {
   title: "Button",
-} as ComponentMeta<typeof IconButton>
+} as Meta<Button.ButtonProps>
+
+const { ...Buttons } = Button
 
 export const AllButtons = () => (
   <Stack direction="row" flex-wrap="wrap">
-    {Object.values(Button).map((ButtonComponent, i) => (
+    {Object.values(Buttons).map((ButtonComponent, i) => (
       <ButtonComponent key={i} />
     ))}
   </Stack>
