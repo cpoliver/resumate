@@ -1,7 +1,7 @@
 import { Avatar, Image, Spacer, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
-import * as Button from "../Button/Button"
+import * as Button from "../Button"
 import posts from "data/posts.json"
 
 type Post = typeof posts[0]
