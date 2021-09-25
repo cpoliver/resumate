@@ -2,6 +2,7 @@ import { Avatar, Box, Image, Link, Spacer, Stack, StackProps, Text } from "@chak
 import React from "react"
 
 import * as Button from "../Button"
+import { Footer } from "./Footer"
 import type { CommentProps, DateProps, PostProps } from "common"
 
 export const Post: React.FC<PostProps> = (post) => (
@@ -30,7 +31,7 @@ const Header: React.FC<PostProps> = ({ profile_name, profile_picture }) => (
 )
 
 const ActionButtons: React.FC = () => (
-  <Stack direction="row" p={1}>
+  <Stack direction="row" p={1} spacing={0}>
     <Button.LikeButton />
     <Button.CommentButton />
     <Button.DirectMessagesButton />
@@ -78,9 +79,3 @@ const Comments: React.FC<PostProps> = ({ date, comments = [] }) =>
       </Text>
     </Stack>
   ) : null
-
-const Footer: React.FC = () => (
-  <Stack borderColor="gray.300" borderTopWidth="1px" direction="row" p={2}>
-    <Button.EmojiButton />
-  </Stack>
-)

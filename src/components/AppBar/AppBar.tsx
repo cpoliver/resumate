@@ -32,7 +32,7 @@ export const AppBar: React.FC = () => (
 )
 
 const Logo: React.FC = () => (
-  <Flex color="gray.900" flex={1}>
+  <Flex flex={1}>
     <Link {...focusStyles} tabIndex={0}>
       <Image alt="Killergram" data-testid="logo" h={7} src={logo} />
     </Link>

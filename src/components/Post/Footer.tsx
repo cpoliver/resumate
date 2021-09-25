@@ -1,0 +1,34 @@
+import { Button as ChakraButton, Input, Stack } from "@chakra-ui/react"
+import React, { ChangeEvent, useState } from "react"
+
+import * as Button from "../Button"
+import { focusStyles } from "components"
+
+export const Footer: React.FC = () => {
+  const [comment, setComment] = useState("")
+
+  return (
+    <Stack align="center" borderColor="gray.300" borderTopWidth="1px" direction="row" p={2} spacing={0}>
+      <Button.EmojiButton />
+      <Input
+        aria-label="Add a comment…"
+        placeholder="Add a comment…"
+        size="sm"
+        value={comment}
+        variant="ghost"
+        onChange={({ target }: ChangeEvent<HTMLInputElement>) => setComment(target.value)}
+      />
+      <ChakraButton
+        {...focusStyles}
+        color="primary"
+        fontWeight="semibold"
+        isDisabled={!comment}
+        px={2}
+        size="sm"
+        variant="ghost"
+      >
+        Post
+      </ChakraButton>
+    </Stack>
+  )
+}
