@@ -20,8 +20,8 @@ type Colors = typeof light
 const dark: Colors = {
   ...common,
   background: common.secondary,
-  backgroundAlt: "#00132e",
-  border: "#293951",
+  backgroundAlt: "#00132f",
+  border: "#041e44",
   text1: "#e8e6e3",
   text2: "#9a9a9a",
   text3: "#5f5f5f",

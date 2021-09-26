@@ -1,8 +1,9 @@
-import { Avatar, IconButton, IconButtonProps, IconProps } from "@chakra-ui/react"
+import { Avatar, IconButton, IconButtonProps, IconProps, useColorMode } from "@chakra-ui/react"
 import React from "react"
 
 import * as Icon from "../Icon/Icon"
-import avatarSrc from "common/avatar.jpg"
+import avatarDark from "common/avatar-dark.png"
+import avatarLight from "common/avatar-light.jpg"
 
 export type ButtonProps = {
   buttonProps?: Omit<IconButtonProps, "aria-label">
@@ -61,10 +62,16 @@ export const NewPostButton: React.FC<ButtonProps> = ({ buttonProps, iconProps })
   <IconButton size="md" {...buttonProps} aria-label="New post" icon={<Icon.NewPostIcon {...(iconProps as any)} />} />
 )
 
-export const ProfileButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => (
-  <IconButton
-    {...buttonProps}
-    aria-label="Profile menu"
-    icon={<Avatar bg="mode.secondary" name="Charles Oliver" p={1} size="xs" src={avatarSrc} />}
-  />
-)
+export const ProfileButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => {
+  const { colorMode } = useColorMode()
+  const avatarSrc = colorMode === "dark" ? avatarDark : avatarLight
+
+  return (
+    <IconButton
+      size="md"
+      {...buttonProps}
+      aria-label="Profile menu"
+      icon={<Avatar bg="mode.secondary" name="Charles Oliver" p={1} size="sm" src={avatarSrc} />}
+    />
+  )
+}
