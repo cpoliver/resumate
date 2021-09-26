@@ -18,7 +18,7 @@ const layerStyles = {
 }
 
 export const theme = {
-  colors: colors[config.initialColorMode!],
+  colors,
   components: { ...components },
   config,
   layerStyles,

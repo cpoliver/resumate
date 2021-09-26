@@ -1,26 +1,14 @@
-import { ChakraProvider, ColorModeScript, ThemeProvider, extendTheme, useColorMode } from "@chakra-ui/react"
+import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react"
 import React from "react"
 
+import { DynamicColorMode } from "./DynamicColorMode"
 import { theme } from "theme"
-import { colors } from "theme/colors"
 
-const CustomThemeProvider: React.FC = ({ children }) => {
-  const { colorMode } = useColorMode()
-
-  const colorModeTheme = extendTheme({
-    ...theme,
-    colors: colors[colorMode],
-  })
-
-  return (
-    <>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <ChakraProvider theme={colorModeTheme}>
-        {/* <ThemeProvider theme={colorModeTheme}>{children}</ThemeProvider> */}
-        {children}
-      </ChakraProvider>
-    </>
-  )
-}
-
-export { CustomThemeProvider as ThemeProvider }
+export const ThemeProvider: React.FC = ({ children }) => (
+  <>
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+    <ChakraProvider theme={extendTheme(theme)}>
+      <DynamicColorMode>{children}</DynamicColorMode>
+    </ChakraProvider>
+  </>
+)

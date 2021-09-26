@@ -33,7 +33,7 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
     outline: "none",
   }
 
-  return <IconButton variant="plain" {...props} onClick={() => setIsToggled(!isToggled)} />
+  return <IconButton size="md" {...props} onClick={() => setIsToggled(!isToggled)} />
 }
 
 export const LikeButton: React.FC<ToggleButtonInstanceProps> = ({ isToggled = false, iconProps, ...buttonProps }) => (

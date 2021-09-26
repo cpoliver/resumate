@@ -11,7 +11,7 @@ export type ButtonProps = {
 
 export const ActivityFeedButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => (
   <IconButton
-    variant="plain"
+    size="md"
     {...buttonProps}
     aria-label="Activity feed"
     icon={<Icon.HeartOutlineIcon {...(iconProps as any)} />}
@@ -19,17 +19,12 @@ export const ActivityFeedButton: React.FC<ButtonProps> = ({ buttonProps, iconPro
 )
 
 export const CommentButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => (
-  <IconButton
-    variant="plain"
-    {...buttonProps}
-    aria-label="Comment"
-    icon={<Icon.CommentIcon {...(iconProps as any)} />}
-  />
+  <IconButton size="md" {...buttonProps} aria-label="Comment" icon={<Icon.CommentIcon {...(iconProps as any)} />} />
 )
 
 export const DirectMessagesButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => (
   <IconButton
-    variant="plain"
+    size="md"
     {...buttonProps}
     aria-label="Direct messages"
     icon={<Icon.DirectMessagesIcon {...(iconProps as any)} />}
@@ -38,7 +33,7 @@ export const DirectMessagesButton: React.FC<ButtonProps> = ({ buttonProps, iconP
 
 export const EllipsisButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => (
   <IconButton
-    variant="plain"
+    size="md"
     {...buttonProps}
     aria-label="More options"
     icon={<Icon.EllipsisIcon {...(iconProps as any)} />}
@@ -46,12 +41,12 @@ export const EllipsisButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }
 )
 
 export const EmojiButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => (
-  <IconButton variant="plain" {...buttonProps} aria-label="Emoji" icon={<Icon.EmojiIcon {...(iconProps as any)} />} />
+  <IconButton size="md" {...buttonProps} aria-label="Emoji" icon={<Icon.EmojiIcon {...(iconProps as any)} />} />
 )
 
 export const FindPeopleButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => (
   <IconButton
-    variant="plain"
+    size="md"
     {...buttonProps}
     aria-label="Find people"
     icon={<Icon.FindPeopleIcon {...(iconProps as any)} />}
@@ -59,23 +54,17 @@ export const FindPeopleButton: React.FC<ButtonProps> = ({ buttonProps, iconProps
 )
 
 export const HomeButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => (
-  <IconButton variant="plain" {...buttonProps} aria-label="Home" icon={<Icon.HomeIcon {...(iconProps as any)} />} />
+  <IconButton size="md" {...buttonProps} aria-label="Home" icon={<Icon.HomeIcon {...(iconProps as any)} />} />
 )
 
 export const NewPostButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => (
-  <IconButton
-    variant="plain"
-    {...buttonProps}
-    aria-label="New post"
-    icon={<Icon.NewPostIcon {...(iconProps as any)} />}
-  />
+  <IconButton size="md" {...buttonProps} aria-label="New post" icon={<Icon.NewPostIcon {...(iconProps as any)} />} />
 )
 
 export const ProfileButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => (
   <IconButton
-    variant="plain"
     {...buttonProps}
     aria-label="Profile menu"
-    icon={<Avatar bg="secondary" name="Charles Oliver" p={1} size="xs" src={avatarSrc} />}
+    icon={<Avatar bg="mode.secondary" name="Charles Oliver" p={1} size="xs" src={avatarSrc} />}
   />
 )

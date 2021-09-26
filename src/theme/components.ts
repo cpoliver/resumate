@@ -1,28 +1,46 @@
 import { focusStyles } from "./utils"
 
 export const Button = {
+  defaultProps: {
+    variant: "plain",
+    size: "xs",
+  },
   variants: {
     plain: {
       bg: "none",
-      color: "text1",
+      color: "mode.text1",
       _hover: {
         bg: "none",
       },
       ...focusStyles,
+    },
+    link: {
+      _hover: { bg: "none" },
+      color: "mode.text4",
+      size: "xs",
+      variant: "ghost",
     },
   },
 }
 
 export const Heading = {
   baseStyle: {
-    color: "text1",
+    color: "mode.text1",
+  },
+}
+
+export const Input = {
+  baseStyle: {
+    field: {
+      bg: "mode.background",
+    },
   },
 }
 
 export const Link = {
   variants: {
     profile: {
-      color: "text1",
+      color: "mode.text1",
       fontWeight: "semibold",
     },
   },
@@ -30,6 +48,6 @@ export const Link = {
 
 export const Text = {
   baseStyle: {
-    color: "text1",
+    color: "mode.text1",
   },
 }

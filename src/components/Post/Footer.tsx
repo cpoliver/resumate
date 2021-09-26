@@ -8,10 +8,11 @@ export const Footer: React.FC = () => {
   const [comment, setComment] = useState("")
 
   return (
-    <Stack align="center" borderColor="border" borderTopWidth="1px" direction="row" p={2} spacing={0}>
+    <Stack align="center" borderColor="mode.border" borderTopWidth="1px" direction="row" p={2} spacing={0}>
       <EmojiButton />
       <Input
         aria-label="Add a comment…"
+        bg="none"
         placeholder="Add a comment…"
         size="sm"
         value={comment}
@@ -20,7 +21,7 @@ export const Footer: React.FC = () => {
       />
       <ChakraButton
         {...focusStyles}
-        color="primary"
+        color="mode.text4"
         fontWeight="semibold"
         isDisabled={!comment}
         px={2}

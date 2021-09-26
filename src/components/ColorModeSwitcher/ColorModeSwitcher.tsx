@@ -12,7 +12,7 @@ export const ColorModeSwitcher: React.FC = () => {
     <Stack>
       <IconButton
         aria-label={`Change color mode to ${colorMode === "dark" ? "Light" : "Dark"}`}
-        color="text1"
+        color="mode.text1"
         icon={<ColorModeIcon />}
         size="sm"
         textTransform="capitalize"

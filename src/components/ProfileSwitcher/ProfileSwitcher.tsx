@@ -13,15 +13,13 @@ export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
   profile_picture,
 }) => (
   <Stack align="center" direction="row" fontSize="sm" mt={6} spacing={4}>
-    <Avatar bg="secondary" cursor="pointer" name={profile_fullname} src={profile_picture} />
+    <Avatar bg="mode.secondary" cursor="pointer" name={profile_fullname} src={profile_picture} />
     <Stack flex={1} spacing={0}>
       <Text cursor="pointer" fontWeight="semibold">
         {profile_name}
       </Text>
-      <Text color="text2">{profile_fullname}</Text>
+      <Text color="mode.text2">{profile_fullname}</Text>
     </Stack>
-    <Button _hover={{ bg: "none" }} color="primary" size="xs" variant="ghost">
-      Switch
-    </Button>
+    <Button variant="link">Switch</Button>
   </Stack>
 )
