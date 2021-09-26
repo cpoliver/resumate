@@ -1,8 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { Suggestion, Suggestions, SuggestionsSkeleton } from "."
-import { suggestions } from "api/data"
+import { Suggestions, SuggestionsLoading } from "."
 
 export default {
   title: "Suggestions",
@@ -12,8 +11,5 @@ export default {
 const Template: ComponentStory<typeof Suggestions> = (args) => <Suggestions {...args} />
 
 export const Default = Template.bind({})
-Default.args = {
-  suggestions: suggestions as Suggestion[],
-}
 
-export const Loading = () => <SuggestionsSkeleton />
+export const Loading = () => <SuggestionsLoading />

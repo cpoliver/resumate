@@ -1,24 +1,22 @@
-import { Avatar, Box, Button, Link, Spacer, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Spacer, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
-type SuggestionType = "suggestion" | "follower"
+import { ErrorMessage } from "../ErrorMessage"
+import { Suggestion, SuggestionSkeleton } from "./Suggestion"
+import { useGetProfiles } from "api"
+import { Profile } from "api/data"
 
-export type Suggestion = {
-  profile_name: string
-  profile_picture: string
-  type: SuggestionType
+export const Suggestions: React.FC = () => {
+  const { data: suggestions = [], error, isLoading } = useGetProfiles()
+
+  if (error) return <ErrorMessage {...error} />
+
+  if (isLoading) return <SuggestionsLoading />
+
+  return <SuggestionsLoaded suggestions={suggestions} />
 }
 
-type SuggestionsProps = {
-  suggestions: Suggestion[]
-}
-
-const label: { [key in SuggestionType]: string } = {
-  follower: "Follows you",
-  suggestion: "Suggested for you",
-}
-
-export const Suggestions: React.FC<SuggestionsProps> = ({ suggestions }) => (
+const SuggestionsLoaded: React.FC<{ suggestions: Profile[] }> = ({ suggestions }) => (
   <Stack fontSize="sm" spacing={3}>
     <Stack direction="row">
       <Text color="mode.text2" flex={1} fontWeight="semibold">
@@ -28,38 +26,23 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ suggestions }) => (
         See All
       </Button>
     </Stack>
-    {suggestions.map(({ profile_name, profile_picture, type }) => (
-      <Stack key={profile_name} align="center" direction="row" spacing={3}>
-        <Avatar bg="mode.secondary" cursor="pointer" name={profile_name} size="sm" src={profile_picture} />
-        <Stack flex={1} justify="center" spacing="-.125rem">
-          <Link variant="profile">{profile_name}</Link>
-          <Text color="mode.text2" fontSize="xs">
-            {label[type]}
-          </Text>
-        </Stack>
-        <Button variant="link">Follow</Button>
-      </Stack>
+    {suggestions.map((suggestion) => (
+      <Suggestion key={suggestion.profile_name} {...suggestion} />
     ))}
   </Stack>
 )
 
-export const SuggestionsSkeleton: React.FC = () => (
+const PLACEHOLDER_COUNT = 5
+
+export const SuggestionsLoading: React.FC = () => (
   <Stack fontSize="sm" layerStyle="loading" spacing={4}>
     <Stack direction="row" py={1}>
       <Box layerStyle="skeleton" w={64} />
       <Spacer />
       <Box layerStyle="skeleton" w={10} />
     </Stack>
-    {new Array(5).fill(0).map((_, i) => (
-      <Stack key={i} align="center" direction="row" spacing={3}>
-        <Avatar bg="mode.text1" cursor="pointer" name=" " size="sm" />
-        <Stack flex={1} justify="center" spacing="1px">
-          <Box layerStyle="skeleton" w={24} />
-          <Spacer />
-          <Box layerStyle="skeleton" w={20} />
-        </Stack>
-        <Box layerStyle="skeleton" w={10} />
-      </Stack>
+    {new Array(PLACEHOLDER_COUNT).fill(0).map((_, i) => (
+      <SuggestionSkeleton key={i} />
     ))}
   </Stack>
 )

@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { App, AppSkeleton } from "."
+import { App } from "."
 
 export default {
   title: "App",
@@ -11,5 +11,3 @@ export default {
 const Template: ComponentStory<typeof App> = (args) => <App {...args} />
 
 export const Default = Template.bind({})
-
-export const Loading = () => <AppSkeleton />
