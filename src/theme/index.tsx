@@ -1,11 +1,6 @@
-import { ThemeConfig, extendTheme } from "@chakra-ui/react"
+import { ThemeConfig } from "@chakra-ui/react"
 
 import * as components from "./components"
-
-const colors = {
-  primary: "#006cfa",
-  secondary: "#001632",
-}
 
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -21,9 +16,8 @@ const layerStyles = {
   },
 }
 
-export const theme = extendTheme({
+export const theme = {
   config,
-  colors,
   components: { ...components },
   layerStyles,
-})
+}
