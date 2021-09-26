@@ -6,9 +6,7 @@ export * from "./ColorModeSwitcher/ColorModeSwitcher"
 
 export * from "./Following/Following"
 
-export * from "./Post/Post"
-
-export * from "./Post/PostSkeleton"
+export * from "./Posts"
 
 export * from "./ProfileSwitcher/ProfileSwitcher"
 

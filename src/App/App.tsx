@@ -7,8 +7,7 @@ import {
   ColorModeSwitcher,
   Following,
   FollowingSkeleton,
-  Post,
-  PostSkeleton,
+  Posts,
   ProfileSwitcher,
   ProfileSwitcherSkeleton,
   Suggestion,
@@ -42,9 +41,7 @@ const AppShell: React.FC = ({ children }) => (
 const Content: React.FC = () => (
   <Stack as="section" flex={2} spacing={6}>
     <Following profiles={profiles} />
-    {posts.map((post) => (
-      <Post key={post.date.date} {...post} />
-    ))}
+    <Posts />
   </Stack>
 )
 
@@ -62,9 +59,7 @@ export const AppSkeleton: React.FC = () => (
   <AppShell>
     <Stack as="section" flex={2} spacing={6}>
       <FollowingSkeleton />
-      {new Array(12).fill(0).map((_, i) => (
-        <PostSkeleton key={i} />
-      ))}
+     
     </Stack>
     <Stack as="aside" flex={1} spacing={6}>
       <ProfileSwitcherSkeleton />

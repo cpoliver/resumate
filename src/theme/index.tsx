@@ -18,7 +18,7 @@ const layerStyles = {
   },
   square: {
     _after: {
-      content: "",
+      content: "''",
       display: "block",
       pb: "100%",
     },
