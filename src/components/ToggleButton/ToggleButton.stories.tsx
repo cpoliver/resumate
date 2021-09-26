@@ -23,7 +23,3 @@ export const Save = Template.bind({})
 Save.args = {
   Component: SaveButton,
 }
-
-// export const Like = () => <LikeButton />
-
-// export const Save = () => <SaveButton />

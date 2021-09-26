@@ -1,7 +1,8 @@
 import { Avatar, Box, Image, Link, Spacer, Stack, StackProps, Text } from "@chakra-ui/react"
 import React from "react"
 
-import * as Button from "../Button"
+import { CommentButton, DirectMessagesButton, EllipsisButton } from "../Button/Button"
+import { LikeButton, SaveButton } from "../ToggleButton/ToggleButton"
 import { Footer } from "./Footer"
 import type { Comment as CommentProps, Date, Post as PostProps } from "common"
 
@@ -26,17 +27,17 @@ const Header: React.FC<PostProps> = ({ profile_name, profile_picture }) => (
       {/* real Instagram uses the name, not fullname */}
       {profile_name}
     </Text>
-    <Button.EllipsisButton />
+    <EllipsisButton />
   </Stack>
 )
 
 const ActionButtons: React.FC = () => (
   <Stack direction="row" p={1} spacing={0}>
-    <Button.LikeButton />
-    <Button.CommentButton />
-    <Button.DirectMessagesButton />
+    <LikeButton />
+    <CommentButton />
+    <DirectMessagesButton />
     <Spacer />
-    <Button.SaveButton />
+    <SaveButton />
   </Stack>
 )
 
@@ -58,7 +59,7 @@ const Comment: React.FC<StackProps & CommentProps & { canLike?: boolean }> = ({
       {username}
     </Link>
     <Text flex={1}>{text}</Text>
-    {canLike && <Button.LikeButton iconProps={{ boxSize: 3 }} size="xs" />}
+    {canLike && <LikeButton iconProps={{ boxSize: 3 }} size="xs" />}
   </Stack>
 )
 

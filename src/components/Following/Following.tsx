@@ -12,8 +12,6 @@ export const Following: React.FC<FollowingProps> = ({ profiles }) => (
     borderColor="gray.300"
     borderWidth="1px"
     direction="row"
-    // overflow="scroll-x"
-    // overflowX="hidden"
     overflow="hidden"
     px={2}
     py={4}

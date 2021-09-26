@@ -1,7 +1,7 @@
 import { Button as ChakraButton, Input, Stack } from "@chakra-ui/react"
 import React, { ChangeEvent, useState } from "react"
 
-import * as Button from "../Button"
+import { EmojiButton } from "../Button/Button"
 import { focusStyles } from "../ThemeProvider/utils"
 
 export const Footer: React.FC = () => {
@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
 
   return (
     <Stack align="center" borderColor="gray.300" borderTopWidth="1px" direction="row" p={2} spacing={0}>
-      <Button.EmojiButton />
+      <EmojiButton />
       <Input
         aria-label="Add a comment…"
         placeholder="Add a comment…"
