@@ -1,11 +1,11 @@
-import { Avatar, Box, Stack, Text } from "@chakra-ui/react"
+import { Avatar, Box, Stack, StackProps, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { Profile } from "common"
 
-type FollowingProps = { profiles: Profile[] }
+type FollowingProps = { profiles: Profile[] } & StackProps
 
-export const Following: React.FC<FollowingProps> = ({ profiles }) => (
+export const Following: React.FC<FollowingProps> = ({ profiles, ...stackProps }) => (
   <Stack
     as="section"
     bg="mode.backgroundAlt"
@@ -15,6 +15,7 @@ export const Following: React.FC<FollowingProps> = ({ profiles }) => (
     overflow="hidden"
     px={2}
     py={4}
+    {...stackProps}
   >
     {profiles.map(({ profile_picture, profile_name }) => (
       <Stack key={profile_name} align="center" cursor="pointer" justify="center">
@@ -29,7 +30,7 @@ export const Following: React.FC<FollowingProps> = ({ profiles }) => (
   </Stack>
 )
 
-export const FollowingSkeleton: React.FC = () => (
+export const FollowingSkeleton: React.FC<StackProps> = (stackProps) => (
   <Stack
     as="section"
     bg="mode.backgroundAlt"
@@ -40,6 +41,7 @@ export const FollowingSkeleton: React.FC = () => (
     overflow="hidden"
     px={2}
     py={4}
+    {...stackProps}
   >
     {new Array(8).fill(0).map((_, i) => (
       <Stack key={i} align="center" cursor="pointer" justify="center" spacing={3}>

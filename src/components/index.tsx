@@ -8,6 +8,8 @@ export * from "./Following/Following"
 
 export * from "./Post/Post"
 
+export * from "./Post/PostSkeleton"
+
 export * from "./ProfileSwitcher/ProfileSwitcher"
 
 export * from "./Suggestions/Suggestions"

@@ -15,6 +15,7 @@ const Template: ComponentStory<typeof Following> = (args) => <Following {...args
 export const Default = Template.bind({})
 Default.args = {
   profiles,
+  w: "fit-content",
 }
 
-export const Loading = () => <FollowingSkeleton />
+export const Loading = () => <FollowingSkeleton w="fit-content" />

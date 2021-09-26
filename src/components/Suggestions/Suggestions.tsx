@@ -56,7 +56,7 @@ export const SuggestionsSkeleton: React.FC = () => (
         <Stack flex={1} justify="center" spacing="1px">
           <Box layerStyle="skeleton" w={24} />
           <Spacer />
-          <Box layerStyle="skeleton" w={32} />
+          <Box layerStyle="skeleton" w={20} />
         </Stack>
         <Box layerStyle="skeleton" w={10} />
       </Stack>

@@ -13,14 +13,14 @@ export const focusStyles = {
 
 export const fade = (startColor: string, endColor: string) =>
   keyframes({
-    from: { borderColor: startColor, background: startColor, opacity: 0.7 },
+    from: { borderColor: startColor, background: startColor, opacity: 0.33 },
     to: { borderColor: endColor, background: endColor, opacity: 0 },
   })
 
 export const skeletonProps = {
   startColor: "mode.text2",
   endColor: "mode.background",
-  fadeDuration: 1,
+  fadeDuration: 1.25,
 }
 
 export const loadingAnimation = `${skeletonProps.fadeDuration}s linear infinite alternate ${fade(
