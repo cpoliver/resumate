@@ -21,7 +21,7 @@ const label: { [key in SuggestionType]: string } = {
 export const Suggestions: React.FC<SuggestionsProps> = ({ suggestions }) => (
   <Stack fontSize="sm" spacing={3}>
     <Stack direction="row">
-      <Text color="gray.500" flex={1} fontWeight="semibold">
+      <Text color="text2" flex={1} fontWeight="semibold">
         Suggestions for you
       </Text>
       <Button _hover={{ bg: "none" }} size="xs" variant="ghost">
@@ -33,7 +33,7 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ suggestions }) => (
         <Avatar bg="secondary" cursor="pointer" name={profile_name} size="sm" src={profile_picture} />
         <Stack flex={1} justify="center" spacing="-.125rem">
           <Link variant="profile">{profile_name}</Link>
-          <Text color="gray.500" fontSize="xs">
+          <Text color="text2" fontSize="xs">
             {label[type]}
           </Text>
         </Stack>

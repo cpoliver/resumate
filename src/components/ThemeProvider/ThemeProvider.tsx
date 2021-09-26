@@ -15,8 +15,9 @@ const CustomThemeProvider: React.FC = ({ children }) => {
   return (
     <>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <ChakraProvider>
-        <ThemeProvider theme={colorModeTheme}>{children}</ThemeProvider>
+      <ChakraProvider theme={colorModeTheme}>
+        {/* <ThemeProvider theme={colorModeTheme}>{children}</ThemeProvider> */}
+        {children}
       </ChakraProvider>
     </>
   )

@@ -9,8 +9,8 @@ export const AppBar: React.FC = () => (
   <Flex
     align="center"
     as="header"
-    bg="white"
-    borderBottomColor="gray.300"
+    bg="bgAlt"
+    borderBottomColor="border"
     borderBottomWidth="1px"
     h={14}
     justify="space-between"
@@ -41,7 +41,7 @@ const Logo: React.FC = () => (
 
 const Search: React.FC = () => (
   <Flex flex={1} justify="center">
-    <Input bg="gray.50" maxW="215px" placeholder="Search" size="sm" textAlign="center" />
+    <Input bg="bg" maxW="215px" placeholder="Search" size="sm" textAlign="center" />
   </Flex>
 )
 

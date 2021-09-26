@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   const [comment, setComment] = useState("")
 
   return (
-    <Stack align="center" borderColor="gray.300" borderTopWidth="1px" direction="row" p={2} spacing={0}>
+    <Stack align="center" borderColor="border" borderTopWidth="1px" direction="row" p={2} spacing={0}>
       <EmojiButton />
       <Input
         aria-label="Add a comment…"

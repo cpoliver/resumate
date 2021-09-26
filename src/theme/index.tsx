@@ -1,5 +1,6 @@
 import { ThemeConfig } from "@chakra-ui/react"
 
+import { colors } from "./colors"
 import * as components from "./components"
 
 const config: ThemeConfig = {
@@ -9,7 +10,7 @@ const config: ThemeConfig = {
 
 const layerStyles = {
   avatarBorder: {
-    borderColor: "gray.900",
+    borderColor: "text1",
     borderRadius: "full",
     borderWidth: "2px",
     p: "2px",
@@ -17,7 +18,8 @@ const layerStyles = {
 }
 
 export const theme = {
-  config,
+  colors: colors[config.initialColorMode!],
   components: { ...components },
+  config,
   layerStyles,
 }

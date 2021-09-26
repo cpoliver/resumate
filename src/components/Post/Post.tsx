@@ -7,7 +7,7 @@ import { Footer } from "./Footer"
 import type { Comment as CommentProps, Date, Post as PostProps } from "common"
 
 export const Post: React.FC<PostProps> = (post) => (
-  <Stack bg="white" borderColor="gray.300" borderWidth="1px" flex={1} fontSize="sm" spacing={0}>
+  <Stack bg="bgAlt" borderColor="border" borderWidth="1px" flex={1} fontSize="sm" spacing={0}>
     <Header {...post} />
     <Image alt={post.post_text} objectFit="cover" src={post.post_image} />
     <ActionButtons />
@@ -19,7 +19,7 @@ export const Post: React.FC<PostProps> = (post) => (
 )
 
 const Header: React.FC<PostProps> = ({ profile_name, profile_picture }) => (
-  <Stack align="center" bg="gray.50" direction="row" p={2} spacing={3}>
+  <Stack align="center" bg="bg" direction="row" p={2} spacing={3}>
     <Box layerStyle="avatarBorder">
       <Avatar name={profile_name} size="sm" src={profile_picture} />
     </Box>
@@ -72,7 +72,7 @@ const Comments: React.FC<PostProps> = ({ date, comments = [] }) =>
   comments.length > 0 ? (
     <Stack pb={4} pl={4} pr={2} spacing={1}>
       {comments.length > 2 && (
-        <Link _hover={{ textDecoration: "none" }} color="gray.500">
+        <Link _hover={{ textDecoration: "none" }} color="text3">
           View all {comments.length} comments
         </Link>
       )}
@@ -83,7 +83,7 @@ const Comments: React.FC<PostProps> = ({ date, comments = [] }) =>
         ))}
       </Stack>
 
-      <Link color="gray.500" fontSize=".65rem" textTransform="uppercase">
+      <Link color="text3" fontSize=".65rem" textTransform="uppercase">
         {getDaysAgo(date)} days ago
       </Link>
     </Stack>

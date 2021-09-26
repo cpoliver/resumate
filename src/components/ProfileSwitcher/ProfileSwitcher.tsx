@@ -18,7 +18,7 @@ export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
       <Text cursor="pointer" fontWeight="semibold">
         {profile_name}
       </Text>
-      <Text color="gray.500">{profile_fullname}</Text>
+      <Text color="text2">{profile_fullname}</Text>
     </Stack>
     <Button _hover={{ bg: "none" }} color="primary" size="xs" variant="ghost">
       Switch

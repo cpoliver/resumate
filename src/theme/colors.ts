@@ -5,8 +5,8 @@ const common = {
 
 const light = {
   ...common,
-  background: "rgba(var(--b3f,250,250,250),1)",
-  backgroundAlt: "#fff",
+  bg: "#fafafa",
+  bgAlt: "#fff",
   border: "#efefef",
   text1: "#262626",
   text2: "#8e8e8e",
@@ -17,8 +17,8 @@ type Colors = typeof light
 
 const dark: Colors = {
   ...common,
-  background: "#999",
-  backgroundAlt: "#000",
+  bg: "#999",
+  bgAlt: "#000",
   border: "#888",
   text1: "#ffff",
   text2: "#8e8e8e",
