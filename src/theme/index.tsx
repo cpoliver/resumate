@@ -11,7 +11,7 @@ const config: ThemeConfig = {
 
 const layerStyles = {
   avatarBorder: {
-    borderColor: "text1",
+    borderColor: "mode.text1",
     borderRadius: "full",
     borderWidth: "2px",
     p: "2px",

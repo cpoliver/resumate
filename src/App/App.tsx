@@ -1,4 +1,4 @@
-import { Container, Flex, ListItem, Stack, Text, UnorderedList } from "@chakra-ui/react"
+import { Container, Flex, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import {
