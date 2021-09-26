@@ -7,13 +7,13 @@ import { useGetProfiles } from "api"
 import { Profile } from "api/data"
 
 export const Suggestions: React.FC = () => {
-  const { data: suggestions = [], error, isLoading } = useGetProfiles()
+  const { data = [], error, isLoading } = useGetProfiles()
 
   if (error) return <ErrorMessage {...error} />
 
   if (isLoading) return <SuggestionsLoading />
 
-  return <SuggestionsLoaded suggestions={suggestions} />
+  return <SuggestionsLoaded suggestions={data} />
 }
 
 const SuggestionsLoaded: React.FC<{ suggestions: Profile[] }> = ({ suggestions }) => (
