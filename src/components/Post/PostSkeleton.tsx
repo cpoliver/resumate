@@ -1,34 +1,41 @@
-import { Box, Skeleton, SkeletonCircle, Spacer, Stack } from "@chakra-ui/react"
+import { Avatar, Box, Spacer, Stack } from "@chakra-ui/react"
 import React from "react"
 
+import { EllipsisButton } from "../Button/Button"
 import { Footer } from "./Footer"
 import { ActionButtons } from "./Post"
 
 export const PostSkeleton: React.FC = () => (
-  <Stack bg="mode.backgroundAlt" borderColor="mode.border" borderWidth="1px" flex={1} fontSize="sm" spacing={0}>
+  <Stack
+    bg="mode.backgroundAlt"
+    borderColor="mode.border"
+    borderWidth="1px"
+    flex={1}
+    fontSize="sm"
+    layerStyle="loading"
+    spacing={0}
+  >
     <Header />
-    <Skeleton children={<Box layerStyle="square" />} />
-    <ActionButtons layerStyle="loading" opacity={0.4} />
+    <Box bg="mode.text1" layerStyle="square" />
+    <ActionButtons />
     <Stack px={4} py={2} spacing={2}>
-      <Skeleton h={3} w="100%" />
-      <Skeleton h={3} w="80%" />
+      <Box layerStyle="skeleton" w="100%" />
+      <Box layerStyle="skeleton" w="80%" />
       <Box h={3} />
-      <Skeleton h={3} w="100%" />
-      <Skeleton h={3} w="80%" />
+      <Box layerStyle="skeleton" w="100%" />
+      <Box layerStyle="skeleton" w="80%" />
     </Stack>
-    <Footer opacity={0.4} />
+    <Footer />
   </Stack>
 )
 
 const Header: React.FC = () => (
-  <Stack align="center" bg="mode.background" direction="row" pl={2} pr={5} py={2} spacing={3}>
-    <SkeletonCircle size="9" />
-    <Skeleton children={<Box h={4} w={32} />} />
+  <Stack align="center" bg="mode.background" direction="row" p={2} spacing={3}>
+    <Box layerStyle="avatarBorder">
+      <Avatar bg="mode.text1" name=" " size="sm" />
+    </Box>
+    <Box layerStyle="skeleton" w={32} />
     <Spacer />
-    <Stack direction="row" spacing="2px">
-      <SkeletonCircle size="1" />
-      <SkeletonCircle size="1" />
-      <SkeletonCircle size="1" />
-    </Stack>
+    <EllipsisButton />
   </Stack>
 )

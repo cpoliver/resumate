@@ -31,6 +31,11 @@ const layerStyles = {
     backgroundColor: skeletonProps.endColor,
     animation: loadingAnimation,
   },
+  skeleton: {
+    h: 4,
+    bg: "mode.text1",
+    borderRadius: "sm",
+  },
 }
 
 export const theme = {
