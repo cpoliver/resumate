@@ -2,7 +2,7 @@ import { Button as ChakraButton, Input, Stack } from "@chakra-ui/react"
 import React, { ChangeEvent, useState } from "react"
 
 import { EmojiButton } from "../Button/Button"
-import { focusStyles } from "../ThemeProvider/utils"
+import { focusStyles } from "theme/utils"
 
 export const Footer: React.FC = () => {
   const [comment, setComment] = useState("")

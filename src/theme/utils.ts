@@ -1,3 +1,4 @@
+// TODO: make layerStyle/variants?
 export const focusStyles = {
   _focusVisible: {
     shadow: "none",

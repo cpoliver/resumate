@@ -2,7 +2,7 @@ import { Container, Flex, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { posts, profiles, suggestions } from "common"
-import { AppBar, Following, Post, ProfileSwitcher, Suggestion, Suggestions } from "components"
+import { AppBar, ColorModeSwitcher, Following, Post, ProfileSwitcher, Suggestion, Suggestions } from "components"
 
 export const App: React.FC = () => (
   <Stack bottom={0} flex={1} left={0} pos="absolute" right={0} spacing={0} top={0}>
@@ -14,6 +14,9 @@ export const App: React.FC = () => (
           <SideBar />
         </Stack>
       </Container>
+    </Flex>
+    <Flex bottom={4} pos="fixed" right={4}>
+      <ColorModeSwitcher />
     </Flex>
   </Stack>
 )
