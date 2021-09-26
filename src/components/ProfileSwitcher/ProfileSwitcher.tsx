@@ -1,4 +1,4 @@
-import { Avatar, Button, Stack, Text } from "@chakra-ui/react"
+import { Avatar, Box, Button, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 type ProfileSwitcherProps = {
@@ -21,5 +21,16 @@ export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
       <Text color="mode.text2">{profile_fullname}</Text>
     </Stack>
     <Button variant="link">Switch</Button>
+  </Stack>
+)
+
+export const ProfileSwitcherSkeleton: React.FC = () => (
+  <Stack align="center" direction="row" fontSize="sm" layerStyle="loading" mt={6} spacing={4}>
+    <Avatar bg="mode.text1" name=" " />
+    <Stack flex={1} spacing={1}>
+      <Box layerStyle="skeleton" w={16} />
+      <Box layerStyle="skeleton" w={24} />
+    </Stack>
+    <Box layerStyle="skeleton" w={10} />
   </Stack>
 )

@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { ProfileSwitcher } from "./ProfileSwitcher"
+import { ProfileSwitcher, ProfileSwitcherSkeleton } from "./ProfileSwitcher"
+import { profile } from "common"
 
 export default {
   title: "ProfileSwitcher",
@@ -11,3 +12,9 @@ export default {
 const Template: ComponentStory<typeof ProfileSwitcher> = (args) => <ProfileSwitcher {...args} />
 
 export const Default = Template.bind({})
+Default.args = {
+  ...profile,
+  profile_fullname: "Alaina Price",
+}
+
+export const Loading = () => <ProfileSwitcherSkeleton />
