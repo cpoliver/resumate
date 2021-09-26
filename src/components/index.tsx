@@ -4,6 +4,8 @@ export * from "./Button/Button"
 
 export * from "./ColorModeSwitcher/ColorModeSwitcher"
 
+export * from "./ErrorMessage"
+
 export * from "./Following/Following"
 
 export * from "./Posts"

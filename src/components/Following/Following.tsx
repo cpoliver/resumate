@@ -3,7 +3,7 @@ import React from "react"
 
 import { Profile } from "api/data"
 
-type FollowingProps = { profiles: Profile[] } & StackProps
+type FollowingProps = StackProps & { profiles: Profile[] }
 
 export const Following: React.FC<FollowingProps> = ({ profiles, ...stackProps }) => (
   <Stack

@@ -59,7 +59,6 @@ export const AppSkeleton: React.FC = () => (
   <AppShell>
     <Stack as="section" flex={2} spacing={6}>
       <FollowingSkeleton />
-     
     </Stack>
     <Stack as="aside" flex={1} spacing={6}>
       <ProfileSwitcherSkeleton />
