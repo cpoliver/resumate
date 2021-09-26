@@ -2,8 +2,8 @@ import { Avatar, IconButton, IconButtonProps, IconProps, useColorMode } from "@c
 import React from "react"
 
 import * as Icon from "../Icon/Icon"
-import avatarDark from "common/avatar-dark.png"
-import avatarLight from "common/avatar-light.jpg"
+import avatarDark from "resources/avatar-dark.png"
+import avatarLight from "resources/avatar-light.jpg"
 
 export type ButtonProps = {
   buttonProps?: Omit<IconButtonProps, "aria-label">

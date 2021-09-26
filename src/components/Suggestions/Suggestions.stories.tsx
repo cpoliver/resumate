@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
 import { Suggestion, Suggestions, SuggestionsSkeleton } from "./Suggestions"
-import { suggestions } from "common"
+import { suggestions } from "data"
 
 export default {
   title: "Suggestions",

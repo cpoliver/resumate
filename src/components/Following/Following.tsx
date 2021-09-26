@@ -1,7 +1,7 @@
 import { Avatar, Box, Stack, StackProps, Text } from "@chakra-ui/react"
 import React from "react"
 
-import { Profile } from "common"
+import { Profile } from "data"
 
 type FollowingProps = { profiles: Profile[] } & StackProps
 

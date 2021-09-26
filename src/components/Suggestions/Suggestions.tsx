@@ -24,7 +24,7 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ suggestions }) => (
       <Text color="mode.text2" flex={1} fontWeight="semibold">
         Suggestions for you
       </Text>
-      <Button color="mode.text2" variant="link">
+      <Button color="mode.text1" variant="link">
         See All
       </Button>
     </Stack>

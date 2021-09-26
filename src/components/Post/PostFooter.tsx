@@ -4,7 +4,7 @@ import React, { ChangeEvent, useState } from "react"
 import { EmojiButton } from "../Button/Button"
 import { focusStyles } from "theme/utils"
 
-export const Footer: React.FC<StackProps> = (stackProps) => {
+export const PostFooter: React.FC<StackProps> = (stackProps) => {
   const [comment, setComment] = useState("")
 
   return (

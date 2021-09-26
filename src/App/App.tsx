@@ -1,7 +1,6 @@
-import { Container, Flex, Stack, Text } from "@chakra-ui/react"
+import { Container, Flex, ListItem, Stack, Text, UnorderedList } from "@chakra-ui/react"
 import React from "react"
 
-import { posts, profiles, suggestions } from "common"
 import {
   AppBar,
   ColorModeSwitcher,
@@ -15,6 +14,7 @@ import {
   Suggestions,
   SuggestionsSkeleton,
 } from "components"
+import { posts, profiles, suggestions } from "data"
 
 export const App: React.FC = () => (
   <AppShell>
@@ -69,9 +69,6 @@ export const AppSkeleton: React.FC = () => (
     <Stack as="aside" flex={1} spacing={6}>
       <ProfileSwitcherSkeleton />
       <SuggestionsSkeleton />
-      <Text color="mode.text3" fontSize="xs" layerStyle="loading" textTransform="uppercase">
-        &copy; {new Date().getFullYear()} Killergram from Charlie
-      </Text>
     </Stack>
   </AppShell>
 )

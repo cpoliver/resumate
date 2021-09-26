@@ -4,7 +4,7 @@ import React from "react"
 
 import { Post } from "./Post"
 import { PostSkeleton } from "./PostSkeleton"
-import { post } from "common"
+import { post } from "data"
 
 export default {
   title: "Post",
