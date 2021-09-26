@@ -35,11 +35,11 @@ export const EllipsisIcon = createIcon({
   displayName: "EllipsisIcon",
   viewBox: "0 0 24 24",
   path: (
-    <>
+    <svg fill="currentColor">
       <circle cx="12" cy="12" r="1.5" />
       <circle cx="6.5" cy="12" r="1.5" />
       <circle cx="17.5" cy="12" r="1.5" />
-    </>
+    </svg>
   ),
 })
 

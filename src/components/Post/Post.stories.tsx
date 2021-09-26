@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
 import { Post } from "./Post"
+import { PostSkeleton } from "./PostSkeleton"
 import { post } from "common"
 
 export default {
@@ -21,3 +22,9 @@ WithComments.args = post
 
 export const New = Template.bind({})
 New.args = { ...post, comments: [], likes: [] }
+
+export const Loading = () => (
+  <Flex maxW={800}>
+    <PostSkeleton />
+  </Flex>
+)

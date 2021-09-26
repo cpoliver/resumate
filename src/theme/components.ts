@@ -1,4 +1,4 @@
-import { focusStyles } from "./utils"
+import { focusStyles, skeletonProps } from "./utils"
 
 export const Button = {
   defaultProps: {
@@ -54,9 +54,8 @@ export const Link = {
 
 export const Skeleton = {
   defaultProps: {
-    startColor: "mode.text2",
-    endColor: "mode.background",
-    fadeDuration: 0.75,
+    ...skeletonProps,
+    w: "fit-content",
   },
 }
 

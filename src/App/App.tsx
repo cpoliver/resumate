@@ -35,7 +35,7 @@ const SideBar: React.FC = () => (
     <ProfileSwitcher {...posts[0]} />
     <Suggestions suggestions={suggestions as Suggestion[]} />
     <Text color="mode.text3" fontSize="xs" textTransform="uppercase">
-      &copy; {new Date().getFullYear()} Killagram from Charlie
+      &copy; {new Date().getFullYear()} Killergram from Charlie
     </Text>
   </Stack>
 )

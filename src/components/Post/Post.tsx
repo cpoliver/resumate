@@ -23,7 +23,7 @@ const Header: React.FC<PostProps> = ({ profile_name, profile_picture }) => (
     <Box layerStyle="avatarBorder">
       <Avatar name={profile_name} size="sm" src={profile_picture} />
     </Box>
-    <Link variant="profile">
+    <Link flex={1} variant="profile">
       {/* real Instagram uses the name, not fullname */}
       {profile_name}
     </Link>
@@ -31,8 +31,8 @@ const Header: React.FC<PostProps> = ({ profile_name, profile_picture }) => (
   </Stack>
 )
 
-const ActionButtons: React.FC = () => (
-  <Stack direction="row" p={1} spacing={0}>
+export const ActionButtons: React.FC<StackProps> = (stackProps) => (
+  <Stack direction="row" p={1} spacing={0} {...stackProps}>
     <LikeButton />
     <CommentButton />
     <DirectMessagesButton />
@@ -48,7 +48,7 @@ const Likes: React.FC<PostProps> = ({ likes = [] }) =>
     </Text>
   ) : null
 
-const Comment: React.FC<StackProps & CommentProps & { canLike?: boolean }> = ({
+export const Comment: React.FC<StackProps & CommentProps & { canLike?: boolean }> = ({
   username,
   text,
   canLike = false,
