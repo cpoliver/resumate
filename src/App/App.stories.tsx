@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { App, AppSkeleton } from "./App"
+import { App, AppSkeleton } from "."
 
 export default {
   title: "App",

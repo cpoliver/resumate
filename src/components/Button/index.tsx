@@ -1,7 +1,7 @@
 import { Avatar, IconButton, IconButtonProps, IconProps, useColorMode } from "@chakra-ui/react"
 import React from "react"
 
-import * as Icon from "../Icon/Icon"
+import * as Icon from "../Icon"
 import avatarDark from "resources/avatar-dark.png"
 import avatarLight from "resources/avatar-light.jpg"
 

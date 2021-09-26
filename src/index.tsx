@@ -2,11 +2,18 @@ import React from "react"
 import { render } from "react-dom"
 import { QueryClient, QueryClientProvider } from "react-query"
 
-import { App } from "./App/App"
+import { App } from "./App"
 import { reportWebVitals } from "./reportWebVitals"
 import { ThemeProvider } from "components"
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchInterval: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+})
 
 render(
   <React.StrictMode>

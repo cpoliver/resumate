@@ -2,7 +2,7 @@ import { DarkMode, LightMode } from "@chakra-ui/react"
 import { ComponentMeta, Story } from "@storybook/react"
 import React, { Fragment } from "react"
 
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
+import { ColorModeSwitcher } from "."
 
 export default {
   title: "ColorModeSwitcher",

@@ -1,7 +1,7 @@
 import { Button as ChakraButton, Input, Stack, StackProps } from "@chakra-ui/react"
 import React, { ChangeEvent, useState } from "react"
 
-import { EmojiButton } from "../Button/Button"
+import { EmojiButton } from "../Button"
 import { focusStyles } from "theme/utils"
 
 export const PostFooter: React.FC<StackProps> = (stackProps) => {

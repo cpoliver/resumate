@@ -1,10 +1,18 @@
 import React from "react"
 import { Box } from "@chakra-ui/react"
-import { QueryClientProvider , QueryClient } from "react-query"
+import { QueryClientProvider, QueryClient } from "react-query"
 
 import { ColorModeSwitcher, ThemeProvider } from "../src/components"
 
-const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false }} })
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      refetchInterval: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+})
 
 export const decorators = [
   (Story) => (

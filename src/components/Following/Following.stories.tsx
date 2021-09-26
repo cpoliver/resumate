@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { Following } from "./Following"
+import { Following } from "."
 import { profiles } from "api/data"
 import { FollowingSkeleton } from "components"
 

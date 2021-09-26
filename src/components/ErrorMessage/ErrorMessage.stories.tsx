@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof ErrorMessage> = (args) => <ErrorMessage {.
 
 export const Default = Template.bind({})
 Default.args = {
-  message: "Error Loading Posts",
-  description: "There was an error trying to fetch your posts. Try again?",
+  name: "Error Loading Posts",
+  message: "There was an error trying to fetch your posts. Try again?",
   onRetry: () => console.log("retry"),
 }

@@ -1,7 +1,7 @@
 import { ComponentMeta, Story } from "@storybook/react"
 import React from "react"
 
-import { LikeButton, SaveButton, ToggleButton, ToggleButtonProps } from "./ToggleButton"
+import { LikeButton, SaveButton, ToggleButton, ToggleButtonProps } from "."
 
 export default {
   title: "ToggleButton",
