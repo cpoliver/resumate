@@ -3,6 +3,7 @@ import React from "react"
 
 import { Following } from "./Following"
 import { profiles } from "common"
+import { FollowingSkeleton } from "components"
 
 export default {
   title: "Following",
@@ -15,3 +16,5 @@ export const Default = Template.bind({})
 Default.args = {
   profiles,
 }
+
+export const Loading = () => <FollowingSkeleton />

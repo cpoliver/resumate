@@ -50,7 +50,7 @@ export const SuggestionsSkeleton: React.FC = () => (
       <Spacer />
       <Box layerStyle="skeleton" w={10} />
     </Stack>
-    {[1, 2, 3, 4, 5].map((i) => (
+    {new Array(5).fill(0).map((_, i) => (
       <Stack key={i} align="center" direction="row" spacing={3}>
         <Avatar bg="mode.text1" cursor="pointer" name=" " size="sm" />
         <Stack flex={1} justify="center" spacing="1px">

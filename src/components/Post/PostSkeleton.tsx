@@ -21,7 +21,7 @@ export const PostSkeleton: React.FC = () => (
     <Stack px={4} py={2} spacing={2}>
       <Box layerStyle="skeleton" w="100%" />
       <Box layerStyle="skeleton" w="80%" />
-      <Box h={3} />
+      <Box />
       <Box layerStyle="skeleton" w="100%" />
       <Box layerStyle="skeleton" w="80%" />
     </Stack>
@@ -31,7 +31,7 @@ export const PostSkeleton: React.FC = () => (
 
 const Header: React.FC = () => (
   <Stack align="center" bg="mode.background" direction="row" p={2} spacing={3}>
-    <Box layerStyle="avatarBorder">
+    <Box borderColor="mode.text1" layerStyle="avatarBorder">
       <Avatar bg="mode.text1" name=" " size="sm" />
     </Box>
     <Box layerStyle="skeleton" w={32} />

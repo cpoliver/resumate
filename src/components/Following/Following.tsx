@@ -28,3 +28,26 @@ export const Following: React.FC<FollowingProps> = ({ profiles }) => (
     ))}
   </Stack>
 )
+
+export const FollowingSkeleton: React.FC = () => (
+  <Stack
+    as="section"
+    bg="mode.backgroundAlt"
+    borderColor="mode.border"
+    borderWidth="1px"
+    direction="row"
+    layerStyle="loading"
+    overflow="hidden"
+    px={2}
+    py={4}
+  >
+    {new Array(8).fill(0).map((_, i) => (
+      <Stack key={i} align="center" cursor="pointer" justify="center" spacing={3}>
+        <Box borderColor="mode.text1" layerStyle="avatarBorder">
+          <Avatar bg="mode.text1" name=" " size="lg" />
+        </Box>
+        <Box layerStyle="skeleton" w={16} />
+      </Stack>
+    ))}
+  </Stack>
+)
