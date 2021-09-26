@@ -2,8 +2,8 @@ import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
 import { Following } from "./Following"
+import { profiles } from "api/data"
 import { FollowingSkeleton } from "components"
-import { profiles } from "data"
 
 export default {
   title: "Following",

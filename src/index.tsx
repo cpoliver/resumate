@@ -1,15 +1,20 @@
 import React from "react"
 import { render } from "react-dom"
+import { QueryClient, QueryClientProvider } from "react-query"
 
 import { App } from "./App/App"
 import { reportWebVitals } from "./reportWebVitals"
 import { ThemeProvider } from "components"
 
+const queryClient = new QueryClient()
+
 render(
   <React.StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root")
 )

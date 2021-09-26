@@ -1,6 +1,7 @@
 import { Container, Flex, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
+import { posts, profiles, suggestions } from "api/data"
 import {
   AppBar,
   ColorModeSwitcher,
@@ -14,7 +15,6 @@ import {
   Suggestions,
   SuggestionsSkeleton,
 } from "components"
-import { posts, profiles, suggestions } from "data"
 
 export const App: React.FC = () => (
   <AppShell>
