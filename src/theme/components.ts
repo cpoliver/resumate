@@ -52,6 +52,14 @@ export const Link = {
   },
 }
 
+export const Skeleton = {
+  defaultProps: {
+    startColor: "mode.text2",
+    endColor: "mode.background",
+    fadeDuration: 0.75,
+  },
+}
+
 export const Text = {
   baseStyle: {
     color: "mode.text1",

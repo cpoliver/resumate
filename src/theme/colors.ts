@@ -1,3 +1,5 @@
+import defaultTheme from "@chakra-ui/theme"
+
 const common = {
   primary: "#006cfa",
   secondary: "#001533",
@@ -29,6 +31,7 @@ const dark: Colors = {
 }
 
 export const colors = {
+  ...defaultTheme.colors,
   ...common,
   modes: {
     light,
