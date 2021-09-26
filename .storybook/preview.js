@@ -1,11 +1,15 @@
 import React from "react"
+import { Box } from "@chakra-ui/react"
 
-import { ThemeProvider } from "../src/components"
+import { ColorModeSwitcher, ThemeProvider } from "../src/components"
 
 export const decorators = [
   (Story) => (
     <ThemeProvider>
         <Story />
+        <Box pos="fixed" top={4} right={4}>
+          <ColorModeSwitcher />
+        </Box>
     </ThemeProvider>
   )
 ]
