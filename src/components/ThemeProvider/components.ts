@@ -19,6 +19,15 @@ export const Heading = {
   },
 }
 
+export const Link = {
+  variants: {
+    profile: {
+      color: "gray.900",
+      fontWeight: "semibold",
+    },
+  },
+}
+
 export const Text = {
   baseStyle: {
     color: "gray.800",

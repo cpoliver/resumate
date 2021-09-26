@@ -1,4 +1,4 @@
-import { Avatar, Button, Stack, Text } from "@chakra-ui/react"
+import { Avatar, Button, Link, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 type SuggestionType = "suggestion" | "follower"
@@ -32,9 +32,7 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ suggestions }) => (
       <Stack key={profile_name} align="center" direction="row" spacing={3}>
         <Avatar bg="secondary" cursor="pointer" name={profile_name} size="sm" src={profile_picture} />
         <Stack flex={1} justify="center" spacing="-.125rem">
-          <Text cursor="pointer" fontWeight="semibold">
-            {profile_name}
-          </Text>
+          <Link variant="profile">{profile_name}</Link>
           <Text color="gray.500" fontSize="xs">
             {label[type]}
           </Text>

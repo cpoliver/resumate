@@ -23,10 +23,10 @@ const Header: React.FC<PostProps> = ({ profile_name, profile_picture }) => (
     <Box layerStyle="avatarBorder">
       <Avatar name={profile_name} size="sm" src={profile_picture} />
     </Box>
-    <Text flex={1} fontWeight="semibold">
+    <Link variant="profile">
       {/* real Instagram uses the name, not fullname */}
       {profile_name}
-    </Text>
+    </Link>
     <EllipsisButton />
   </Stack>
 )
@@ -55,9 +55,7 @@ const Comment: React.FC<StackProps & CommentProps & { canLike?: boolean }> = ({
   ...stackProps
 }) => (
   <Stack direction="row" spacing={1} {...stackProps}>
-    <Link color="gray.900" fontWeight="semibold">
-      {username}
-    </Link>
+    <Link variant="profile">{username}</Link>
     <Text flex={1}>{text}</Text>
     {canLike && <LikeButton iconProps={{ boxSize: 3 }} size="xs" />}
   </Stack>
@@ -73,7 +71,11 @@ const getDaysAgo = ({ date }: Date) => {
 const Comments: React.FC<PostProps> = ({ date, comments = [] }) =>
   comments.length > 0 ? (
     <Stack pb={4} pl={4} pr={2} spacing={1}>
-      {comments.length > 2 && <Link color="gray.500">View all {comments.length} comments</Link>}
+      {comments.length > 2 && (
+        <Link _hover={{ textDecoration: "none" }} color="gray.500">
+          View all {comments.length} comments
+        </Link>
+      )}
 
       <Stack spacing={0}>
         {comments.slice(0, 2).map((comment, i) => (
@@ -81,8 +83,8 @@ const Comments: React.FC<PostProps> = ({ date, comments = [] }) =>
         ))}
       </Stack>
 
-      <Text color="gray.500" fontSize=".65rem" textTransform="uppercase">
+      <Link color="gray.500" fontSize=".65rem" textTransform="uppercase">
         {getDaysAgo(date)} days ago
-      </Text>
+      </Link>
     </Stack>
   ) : null
