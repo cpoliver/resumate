@@ -1,8 +1,8 @@
-import { Container, Flex, Image, Input, Link, Stack } from "@chakra-ui/react"
+import { Container, Flex, Input, Link, Stack } from "@chakra-ui/react"
 import React from "react"
 
 import * as Button from "../Button/Button"
-import logo from "logo.svg"
+import { ReactComponent as Logo } from "logo.svg"
 import { focusStyles } from "theme/utils"
 
 export const AppBar: React.FC = () => (
@@ -23,7 +23,7 @@ export const AppBar: React.FC = () => (
   >
     <Container maxW="container.lg">
       <Stack align="center" direction="row" spacing={2}>
-        <Logo />
+        <Brand />
         <Search />
         <Nav />
       </Stack>
@@ -31,10 +31,10 @@ export const AppBar: React.FC = () => (
   </Flex>
 )
 
-const Logo: React.FC = () => (
+const Brand: React.FC = () => (
   <Flex flex={1}>
-    <Link {...focusStyles} tabIndex={0}>
-      <Image alt="Killergram" data-testid="logo" h={7} src={logo} />
+    <Link {...focusStyles} aria-label="Killergram" color="mode.text1" tabIndex={0}>
+      <Logo data-testid="logo" height="2rem" />
     </Link>
   </Flex>
 )
