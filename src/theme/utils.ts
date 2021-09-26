@@ -20,7 +20,7 @@ export const fade = (startColor: string, endColor: string) =>
 export const skeletonProps = {
   startColor: "mode.text2",
   endColor: "mode.background",
-  fadeDuration: 0.75,
+  fadeDuration: 1,
 }
 
 export const loadingAnimation = `${skeletonProps.fadeDuration}s linear infinite alternate ${fade(

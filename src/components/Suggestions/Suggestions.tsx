@@ -1,4 +1,4 @@
-import { Avatar, Button, Link, Stack, Text } from "@chakra-ui/react"
+import { Avatar, Box, Button, Link, Spacer, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 type SuggestionType = "suggestion" | "follower"
@@ -38,6 +38,27 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ suggestions }) => (
           </Text>
         </Stack>
         <Button variant="link">Follow</Button>
+      </Stack>
+    ))}
+  </Stack>
+)
+
+export const SuggestionsSkeleton: React.FC = () => (
+  <Stack fontSize="sm" layerStyle="loading" spacing={4}>
+    <Stack direction="row" py={1}>
+      <Box layerStyle="skeleton" w={64} />
+      <Spacer />
+      <Box layerStyle="skeleton" w={10} />
+    </Stack>
+    {[1, 2, 3, 4, 5].map((i) => (
+      <Stack key={i} align="center" direction="row" spacing={3}>
+        <Avatar bg="mode.text1" cursor="pointer" name=" " size="sm" />
+        <Stack flex={1} justify="center" spacing="1px">
+          <Box layerStyle="skeleton" w={24} />
+          <Spacer />
+          <Box layerStyle="skeleton" w={32} />
+        </Stack>
+        <Box layerStyle="skeleton" w={10} />
       </Stack>
     ))}
   </Stack>

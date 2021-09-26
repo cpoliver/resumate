@@ -32,7 +32,7 @@ const layerStyles = {
     animation: loadingAnimation,
   },
   skeleton: {
-    h: 4,
+    h: 3,
     bg: "mode.text1",
     borderRadius: "sm",
   },

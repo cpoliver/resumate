@@ -7,7 +7,7 @@ export const decorators = [
   (Story) => (
     <ThemeProvider>
         <Story />
-        <Box pos="fixed" top={4} right={4}>
+        <Box pos="fixed" bottom={4} right={4}>
           <ColorModeSwitcher />
         </Box>
     </ThemeProvider>
