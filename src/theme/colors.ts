@@ -8,7 +8,7 @@ const light = {
   ...common,
   background: "#fafafa",
   backgroundAlt: "#fff",
-  border: "#efefef",
+  border: "rgb(219, 219, 219)",
   text1: "#262626",
   text2: "#8e8e8e",
   text3: "#c7c7c7",

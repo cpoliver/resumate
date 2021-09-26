@@ -71,7 +71,7 @@ export const ProfileButton: React.FC<ButtonProps> = ({ buttonProps, iconProps })
       size="md"
       {...buttonProps}
       aria-label="Profile menu"
-      icon={<Avatar bg="mode.secondary" name="Charles Oliver" p={1} size="sm" src={avatarSrc} />}
+      icon={<Avatar bg="mode.secondary" name="Charles Oliver" p={1} size="xs" src={avatarSrc} />}
     />
   )
 }

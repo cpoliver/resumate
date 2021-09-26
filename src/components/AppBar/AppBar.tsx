@@ -21,7 +21,7 @@ export const AppBar: React.FC = () => (
     right={0}
     zIndex="banner"
   >
-    <Container maxW="container.lg">
+    <Container>
       <Stack align="center" direction="row" spacing={2}>
         <Brand />
         <Search />
@@ -34,7 +34,7 @@ export const AppBar: React.FC = () => (
 const Brand: React.FC = () => (
   <Flex flex={1}>
     <Link {...focusStyles} aria-label="Killergram" color="mode.text1" tabIndex={0}>
-      <Logo data-testid="logo" height="2rem" />
+      <Logo data-testid="logo" height="1.65rem" />
     </Link>
   </Flex>
 )

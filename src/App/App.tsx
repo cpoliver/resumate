@@ -8,7 +8,7 @@ export const App: React.FC = () => (
   <Stack bottom={0} flex={1} left={0} pos="absolute" right={0} spacing={0} top={0}>
     <AppBar />
     <Flex as="main" bg="mode.background" flex={1}>
-      <Container flex={1} maxW="container.lg" minH="100vh" my={20} overflow="auto">
+      <Container flex={1} minH="100vh" my={20} overflow="auto">
         <Stack direction="row" flex={1} spacing={8}>
           <Content />
           <SideBar />

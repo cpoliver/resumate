@@ -23,6 +23,12 @@ export const Button = {
   },
 }
 
+export const Container = {
+  baseStyle: {
+    maxW: 975,
+  },
+}
+
 export const Heading = {
   baseStyle: {
     color: "mode.text1",
