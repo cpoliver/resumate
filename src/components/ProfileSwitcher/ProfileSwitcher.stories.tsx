@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { ProfileSwitcher, ProfileSwitcherLoading } from "."
+import { ProfileSwitcher, ProfileSwitcherLoading } from "./ProfileSwitcher"
 
 export default {
   title: "ProfileSwitcher",

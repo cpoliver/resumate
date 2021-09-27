@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { ErrorMessage } from "."
+import { ErrorMessage } from "./ErrorMessage"
 
 export default {
   title: "ErrorMessage",

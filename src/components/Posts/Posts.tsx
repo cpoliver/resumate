@@ -1,11 +1,10 @@
 import { Stack } from "@chakra-ui/react"
 import React from "react"
 
-import { ErrorMessage } from "../ErrorMessage"
+import { ErrorMessage } from "../ErrorMessage/ErrorMessage"
 import { Post } from "./Post"
 import { PostSkeleton } from "./PostSkeleton"
-import { useGetPosts } from "api"
-import { Post as PostProps } from "api/data"
+import { Post as PostProps, useGetPosts } from "api"
 
 export const Posts: React.FC = () => {
   const { data = [], error, isLoading } = useGetPosts()

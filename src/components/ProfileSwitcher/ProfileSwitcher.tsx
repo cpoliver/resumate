@@ -1,9 +1,8 @@
 import { Avatar, Box, Button, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
-import { ErrorMessage } from "../ErrorMessage"
-import { useGetUserProfile } from "api"
-import { UserProfile } from "api/data"
+import { ErrorMessage } from "../ErrorMessage/ErrorMessage"
+import { UserProfile, useGetUserProfile } from "api"
 
 export const ProfileSwitcher: React.FC = () => {
   const { data, error, isLoading } = useGetUserProfile()

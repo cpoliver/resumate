@@ -1,19 +1,19 @@
 export * from "./AppBar"
 
-export * from "./Button"
+export * from "./Button/Button"
 
-export * from "./ColorModeSwitcher"
+export * from "./ColorModeSwitcher/ColorModeSwitcher"
 
-export * from "./ErrorMessage"
+export * from "./ErrorMessage/ErrorMessage"
 
-export * from "./Following"
+export * from "./Following/Following"
 
-export * from "./Posts"
+export * from "./Posts/Posts"
 
-export * from "./ProfileSwitcher"
+export * from "./ProfileSwitcher/ProfileSwitcher"
 
-export * from "./Suggestions"
+export * from "./Suggestions/Suggestions"
 
-export * from "./ThemeProvider"
+export * from "./ThemeProvider/ThemeProvider"
 
-export * from "./ToggleButton"
+export * from "./ToggleButton/ToggleButton"

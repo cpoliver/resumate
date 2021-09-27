@@ -1,7 +1,7 @@
 import { Avatar, Box, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
-import { Profile } from "api/data"
+import { Profile } from "api"
 
 export const FollowingProfile: React.FC<Profile> = ({ profile_name }) => (
   <Stack align="center" cursor="pointer" justify="center">

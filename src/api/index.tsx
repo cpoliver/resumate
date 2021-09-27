@@ -3,6 +3,8 @@ import { useQuery } from "react-query"
 
 import { Post, Profile, UserProfile } from "./data"
 
+export * from "./data"
+
 const API_URL = "https://flynn.boolean.careers/exercises/api/boolgram"
 
 export const useGetProfiles = () =>

@@ -2,7 +2,7 @@ import { IconProps, Stack } from "@chakra-ui/react"
 import { Meta } from "@storybook/react"
 import React from "react"
 
-import * as Icon from "."
+import * as Icon from "./Icon"
 
 export default {
   title: "Icon",

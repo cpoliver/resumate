@@ -1,10 +1,10 @@
 import { Avatar, Box, Image, Link, Spacer, Stack, StackProps, Text } from "@chakra-ui/react"
 import React from "react"
 
-import { CommentButton, DirectMessagesButton, EllipsisButton } from "../Button"
-import { LikeButton, SaveButton } from "../ToggleButton"
+import { CommentButton, DirectMessagesButton, EllipsisButton } from "../Button/Button"
+import { LikeButton, SaveButton } from "../ToggleButton/ToggleButton"
 import { PostFooter as Footer } from "./PostFooter"
-import type { Comment as CommentProps, Date, Post as PostProps } from "api/data"
+import type { Comment as CommentProps, Date, Post as PostProps } from "api"
 
 export const Post: React.FC<PostProps> = (post) => (
   <Stack bg="mode.backgroundAlt" borderColor="mode.border" borderWidth="1px" flex={1} fontSize="sm" spacing={0}>

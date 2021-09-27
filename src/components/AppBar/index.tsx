@@ -1,8 +1,8 @@
 import { Container, Flex, Input, Link, Stack } from "@chakra-ui/react"
 import React from "react"
 
-import * as Button from "../Button"
-import { ProfileButton } from "../ProfileButton"
+import * as Button from "../Button/Button"
+import { ProfileButton } from "../ProfileButton/ProfileButton"
 import { ReactComponent as Logo } from "resources/logo.svg"
 import { focusStyles } from "theme/utils"
 

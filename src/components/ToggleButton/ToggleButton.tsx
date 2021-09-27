@@ -1,7 +1,7 @@
 import { IconButton, IconButtonProps, IconProps } from "@chakra-ui/react"
 import React, { useState } from "react"
 
-import * as Icon from "../Icon"
+import * as Icon from "../Icon/Icon"
 
 type ToggleButtonInstanceProps = Omit<IconButtonProps, "icon" | "aria-label"> & {
   isToggled?: boolean

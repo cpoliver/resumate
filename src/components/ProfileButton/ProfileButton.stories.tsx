@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { ProfileButton } from "."
+import { ProfileButton } from "./ProfileButton"
 
 export default {
   title: "ProfileButton",

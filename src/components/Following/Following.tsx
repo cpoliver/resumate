@@ -1,10 +1,9 @@
 import { Stack } from "@chakra-ui/react"
 import React from "react"
 
-import { ErrorMessage } from "../ErrorMessage"
+import { ErrorMessage } from "../ErrorMessage/ErrorMessage"
 import { FollowingProfile, FollowingProfileSkeleton } from "./FollowingProfile"
-import { useGetProfiles } from "api"
-import { Profile } from "api/data"
+import { Profile, useGetProfiles } from "api"
 
 export const Following: React.FC = () => {
   const { data = [], error, isLoading } = useGetProfiles()

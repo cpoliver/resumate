@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { Following, FollowingLoading } from "."
+import { Following, FollowingLoading } from "./Following"
 
 export default {
   title: "Following",

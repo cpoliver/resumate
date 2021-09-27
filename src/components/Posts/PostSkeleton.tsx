@@ -1,7 +1,7 @@
 import { Avatar, Box, Spacer, Stack } from "@chakra-ui/react"
 import React from "react"
 
-import { EllipsisButton } from "../Button"
+import { EllipsisButton } from "../Button/Button"
 import { ActionButtons } from "./Post"
 import { PostFooter as Footer } from "./PostFooter"
 

@@ -1,7 +1,7 @@
 import { IconButton, IconButtonProps, IconProps } from "@chakra-ui/react"
 import React from "react"
 
-import * as Icon from "../Icon"
+import * as Icon from "../Icon/Icon"
 
 export type ButtonProps = {
   buttonProps?: Omit<IconButtonProps, "aria-label">

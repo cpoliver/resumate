@@ -1,7 +1,7 @@
 import { Avatar, Box, Button, Link, Spacer, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
-import { Profile } from "api/data"
+import { Profile } from "api"
 
 type SuggestionType = "suggestion" | "follower"
 

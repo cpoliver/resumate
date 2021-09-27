@@ -1,10 +1,9 @@
 import { Box, Button, Spacer, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
-import { ErrorMessage } from "../ErrorMessage"
+import { ErrorMessage } from "../ErrorMessage/ErrorMessage"
 import { Suggestion, SuggestionSkeleton } from "./Suggestion"
-import { useGetProfiles } from "api"
-import { Profile } from "api/data"
+import { Profile, useGetProfiles } from "api"
 
 export const Suggestions: React.FC = () => {
   const { data = [], error, isLoading } = useGetProfiles()

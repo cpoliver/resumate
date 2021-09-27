@@ -2,7 +2,7 @@ import { Stack } from "@chakra-ui/react"
 import { Meta } from "@storybook/react"
 import React from "react"
 
-import * as Button from "."
+import * as Button from "./Button"
 
 export default {
   title: "Button",
