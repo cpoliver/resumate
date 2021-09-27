@@ -1,13 +1,26 @@
 import { Avatar, Box, Button, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
+import { ErrorMessage } from "../ErrorMessage"
+import { useGetPosts } from "api"
+
 type ProfileSwitcherProps = {
   profile_name: string
   profile_fullname: string
   profile_picture?: string
 }
 
-export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
+export const ProfileSwitcher: React.FC = () => {
+  const { data = [], error, isLoading } = useGetPosts()
+
+  if (error) return <ErrorMessage {...error} />
+
+  if (isLoading) return <ProfileSwitcherLoading />
+
+  return <ProfileSwitcherLoaded {...data[0]} />
+}
+
+export const ProfileSwitcherLoaded: React.FC<ProfileSwitcherProps> = ({
   profile_name,
   profile_fullname,
   profile_picture,
@@ -24,7 +37,7 @@ export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
   </Stack>
 )
 
-export const ProfileSwitcherSkeleton: React.FC = () => (
+export const ProfileSwitcherLoading: React.FC = () => (
   <Stack align="center" direction="row" fontSize="sm" layerStyle="loading" mt={6} spacing={4}>
     <Avatar bg="mode.text1" name=" " />
     <Stack flex={1} spacing={1}>

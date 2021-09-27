@@ -1,7 +1,6 @@
 import { Container, Flex, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
-import { posts, profiles } from "api/data"
 import { AppBar, ColorModeSwitcher, Following, Posts, ProfileSwitcher, Suggestions } from "components"
 
 export const App: React.FC = () => (
@@ -29,14 +28,14 @@ const AppShell: React.FC = ({ children }) => (
 
 const Content: React.FC = () => (
   <Stack as="section" flex={2} spacing={6}>
-    <Following profiles={profiles} />
+    <Following />
     <Posts />
   </Stack>
 )
 
 const SideBar: React.FC = () => (
   <Stack as="aside" flex={1} spacing={6}>
-    <ProfileSwitcher {...posts[0]} />
+    <ProfileSwitcher />
     <Suggestions />
     <Text color="mode.text3" fontSize="xs" textTransform="uppercase">
       &copy; {new Date().getFullYear()} Killergram from Charlie
