@@ -15,9 +15,14 @@ export const ProfileSwitcher: React.FC = () => {
   return <ProfileSwitcherLoaded {...data!} />
 }
 
-export const ProfileSwitcherLoaded: React.FC<UserProfile> = ({ profile_name, profile_fullname, profile_picture }) => (
+export const ProfileSwitcherLoaded: React.FC<UserProfile> = ({ profile_name, profile_fullname }) => (
   <Stack align="center" direction="row" fontSize="sm" mt={6} spacing={4}>
-    <Avatar bg="mode.secondary" cursor="pointer" name={profile_fullname} src={profile_picture} />
+    <Avatar
+      bg="mode.secondary"
+      cursor="pointer"
+      name={profile_fullname}
+      src={`https://i.pravatar.cc/80?u=${profile_name}`}
+    />
     <Stack flex={1} spacing={0}>
       <Text cursor="pointer" fontWeight="semibold">
         {profile_name}

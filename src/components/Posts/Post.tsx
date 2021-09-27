@@ -21,7 +21,7 @@ export const Post: React.FC<PostProps> = (post) => (
 const Header: React.FC<PostProps> = ({ profile_name, profile_picture }) => (
   <Stack align="center" bg="mode.background" direction="row" p={2} spacing={3}>
     <Box layerStyle="avatarBorder">
-      <Avatar name={profile_name} size="sm" src={profile_picture} />
+      <Avatar name={profile_name} size="sm" src={`https://i.pravatar.cc/80?u=${profile_name}`} />
     </Box>
     <Link flex={1} variant="profile">
       {/* real Instagram uses the name, not fullname */}

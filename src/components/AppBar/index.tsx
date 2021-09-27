@@ -2,6 +2,7 @@ import { Container, Flex, Input, Link, Stack } from "@chakra-ui/react"
 import React from "react"
 
 import * as Button from "../Button"
+import { ProfileButton } from "../ProfileButton"
 import { ReactComponent as Logo } from "resources/logo.svg"
 import { focusStyles } from "theme/utils"
 
@@ -52,6 +53,6 @@ const Nav: React.FC = () => (
     <Button.NewPostButton />
     <Button.FindPeopleButton />
     <Button.ActivityFeedButton />
-    <Button.ProfileButton />
+    <ProfileButton />
   </Stack>
 )
