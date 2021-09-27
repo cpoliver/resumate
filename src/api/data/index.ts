@@ -10,6 +10,8 @@ export const profile = profiles[0]
 
 export type Profile = typeof profile
 
+export type UserProfile = Profile & Pick<Post, "profile_fullname">
+
 export type Post = typeof post
 
 export type Comment = typeof post.comments[0]
