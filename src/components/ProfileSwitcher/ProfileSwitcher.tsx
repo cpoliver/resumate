@@ -5,16 +5,16 @@ import { ErrorMessage } from "../ErrorMessage/ErrorMessage"
 import { UserProfile, useGetUserProfile } from "api"
 
 export const ProfileSwitcher: React.FC = () => {
-  const { data, error, isLoading } = useGetUserProfile()
+  const { data, error, isLoading, refetch } = useGetUserProfile()
 
   if (isLoading) return <ProfileSwitcherLoading />
 
-  if (error) return <ErrorMessage {...error} />
+  if (error) return <ErrorMessage {...error.response?.data} onRetry={refetch} />
 
   return <ProfileSwitcherLoaded {...data!} />
 }
 
-export const ProfileSwitcherLoaded: React.FC<UserProfile> = ({ profile_name, profile_fullname }) => (
+const ProfileSwitcherLoaded: React.FC<UserProfile> = ({ profile_name, profile_fullname }) => (
   <Stack align="center" direction="row" fontSize="sm" mt={6} spacing={4}>
     <Avatar
       bg="mode.secondary"
@@ -32,7 +32,7 @@ export const ProfileSwitcherLoaded: React.FC<UserProfile> = ({ profile_name, pro
   </Stack>
 )
 
-export const ProfileSwitcherLoading: React.FC = () => (
+const ProfileSwitcherLoading: React.FC = () => (
   <Stack align="center" direction="row" fontSize="sm" layerStyle="loading" mt={6} spacing={4}>
     <Avatar bg="mode.text1" name=" " />
     <Stack flex={1} spacing={1}>
