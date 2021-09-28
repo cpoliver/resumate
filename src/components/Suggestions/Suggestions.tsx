@@ -8,9 +8,9 @@ import { Profile, useGetProfiles } from "api"
 export const Suggestions: React.FC = () => {
   const { data = [], error, isLoading } = useGetProfiles()
 
-  if (error) return <ErrorMessage {...error} />
-
   if (isLoading) return <SuggestionsLoading />
+
+  if (error) return <ErrorMessage {...error} />
 
   return <SuggestionsLoaded suggestions={data} />
 }

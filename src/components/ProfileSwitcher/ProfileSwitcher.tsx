@@ -7,9 +7,9 @@ import { UserProfile, useGetUserProfile } from "api"
 export const ProfileSwitcher: React.FC = () => {
   const { data, error, isLoading } = useGetUserProfile()
 
-  if (error) return <ErrorMessage {...error} />
-
   if (isLoading) return <ProfileSwitcherLoading />
+
+  if (error) return <ErrorMessage {...error} />
 
   return <ProfileSwitcherLoaded {...data!} />
 }

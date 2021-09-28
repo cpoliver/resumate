@@ -8,9 +8,9 @@ import { Profile, useGetProfiles } from "api"
 export const Following: React.FC = () => {
   const { data = [], error, isLoading } = useGetProfiles()
 
-  if (error) return <ErrorMessage {...error} />
-
   if (isLoading) return <FollowingLoading />
+
+  if (error) return <ErrorMessage {...error} />
 
   return <FollowingLoaded profiles={data} />
 }

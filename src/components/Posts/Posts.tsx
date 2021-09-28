@@ -9,9 +9,9 @@ import { Post as PostProps, useGetPosts } from "api"
 export const Posts: React.FC = () => {
   const { data = [], error, isLoading } = useGetPosts()
 
-  if (error) return <ErrorMessage {...error} />
-
   if (isLoading) return <PostsLoading />
+
+  if (error) return <ErrorMessage {...error} />
 
   return <PostsLoaded posts={data} />
 }
