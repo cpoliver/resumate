@@ -13,11 +13,13 @@ const queryClient = new QueryClient({
       retry: false,
       refetchInterval: false,
       refetchOnWindowFocus: false,
+      cacheTime: 0,
     },
   },
 })
 
 export const decorators = [
+  mswDecorator,
   (Story) => (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
@@ -27,8 +29,7 @@ export const decorators = [
         </Box>
       </ThemeProvider>
     </QueryClientProvider>
-  ),
-  mswDecorator
+  )
 ]
 
 export const parameters = {

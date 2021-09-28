@@ -3,7 +3,6 @@ import { rest } from "msw"
 import { posts, profiles } from "../data"
 import { POSTS_URL, PROFILES_URL } from "common/constants"
 
-// TODO: try Infinity instead
 const ONE_HOUR_IN_MS = 1000 * 60 * 60 * 60
 
 export const handlers = {
