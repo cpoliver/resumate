@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { AppBar } from "."
+import { AppBar } from "./AppBar"
 
 export default {
   title: "AppBar",
