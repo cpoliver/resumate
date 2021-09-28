@@ -6,11 +6,11 @@ import { FollowingProfile, FollowingProfileSkeleton } from "./FollowingProfile"
 import { Profile, useGetProfiles } from "api"
 
 export const Following: React.FC = () => {
-  const { data = [], error, isLoading } = useGetProfiles()
+  const { data = [], error, isLoading, refetch } = useGetProfiles()
 
   if (isLoading) return <FollowingLoading />
 
-  if (error) return <ErrorMessage {...error} />
+  if (error) return <ErrorMessage {...error.response?.data} onRetry={refetch} />
 
   return <FollowingLoaded profiles={data} />
 }

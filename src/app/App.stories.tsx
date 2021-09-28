@@ -12,21 +12,13 @@ export default {
 const Template: ComponentStory<typeof App> = (args) => <App {...args} />
 
 export const Success = Template.bind({})
-Success.parameters = {
-  msw: handlers.success,
-}
+Success.parameters = { msw: handlers.success }
 
 export const Loading = Template.bind({})
-Loading.parameters = {
-  msw: handlers.loading,
-}
+Loading.parameters = { msw: handlers.loading }
 
 export const Error = Template.bind({})
-Error.parameters = {
-  msw: handlers.error,
-}
+Error.parameters = { msw: handlers.error }
 
 export const NoData = Template.bind({})
-NoData.parameters = {
-  msw: handlers.noData,
-}
+NoData.parameters = { msw: handlers.noData }

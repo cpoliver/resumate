@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
-import { Following, FollowingLoading } from "./Following"
+import { Following } from "./Following"
+import { handlers } from "api/mocks"
 
 export default {
   title: "Following",
@@ -10,6 +11,14 @@ export default {
 
 const Template: ComponentStory<typeof Following> = (args) => <Following {...args} />
 
-export const Default = Template.bind({})
+export const Success = Template.bind({})
+Success.parameters = { msw: handlers.success }
 
-export const Loading = () => <FollowingLoading />
+export const Loading = Template.bind({})
+Loading.parameters = { msw: handlers.loading }
+
+export const Error = Template.bind({})
+Error.parameters = { msw: handlers.error }
+
+export const NoData = Template.bind({})
+NoData.parameters = { msw: handlers.noData }
