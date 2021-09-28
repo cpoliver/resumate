@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react"
 import React from "react"
 
 import { App } from "."
-import { handlers } from "api/mocks/handlers"
+import { handlers } from "api/mocks"
 
 export default {
   title: "App",

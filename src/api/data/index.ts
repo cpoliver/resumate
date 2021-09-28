@@ -1,6 +1,6 @@
-import posts from "api/data/posts.json"
-import profiles from "api/data/profiles.json"
-import suggestions from "api/data/suggestions.json"
+import posts from "./posts.json"
+import profiles from "./profiles.json"
+import suggestions from "./suggestions.json"
 
 export { posts, profiles, suggestions }
 
