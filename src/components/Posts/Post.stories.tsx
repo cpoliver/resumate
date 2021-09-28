@@ -17,11 +17,8 @@ const Template: ComponentStory<typeof Post> = (args) => (
   </Flex>
 )
 
-export const WithComments = Template.bind({})
-WithComments.args = post
-
-export const New = Template.bind({})
-New.args = { ...post, comments: [], likes: [] }
+export const Success = Template.bind({})
+Success.args = post
 
 export const Loading = () => (
   <Flex maxW={800}>

@@ -4,7 +4,7 @@ import React from "react"
 import { AppBar } from "./AppBar"
 
 export default {
-  title: "AppBar",
+  title: "App Bar",
   component: AppBar,
 } as ComponentMeta<typeof AppBar>
 

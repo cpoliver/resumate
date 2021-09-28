@@ -4,7 +4,7 @@ import React from "react"
 import { ProfileButton } from "./ProfileButton"
 
 export default {
-  title: "ProfileButton",
+  title: "Profile Button",
   component: ProfileButton,
 } as ComponentMeta<typeof ProfileButton>
 

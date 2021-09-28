@@ -15,7 +15,7 @@ export const Following: React.FC = () => {
   return <FollowingLoaded profiles={data} />
 }
 
-export const FollowingLoaded: React.FC<{ profiles: Profile[] }> = ({ profiles }) => (
+const FollowingLoaded: React.FC<{ profiles: Profile[] }> = ({ profiles }) => (
   <Stack
     as="section"
     bg="mode.backgroundAlt"
@@ -34,7 +34,7 @@ export const FollowingLoaded: React.FC<{ profiles: Profile[] }> = ({ profiles })
 
 const PLACEHOLDER_COUNT = 8
 
-export const FollowingLoading: React.FC = () => (
+const FollowingLoading: React.FC = () => (
   <Stack
     as="section"
     bg="mode.backgroundAlt"

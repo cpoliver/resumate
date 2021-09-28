@@ -1,14 +1,11 @@
-import { Avatar, IconButton, IconButtonProps, IconProps } from "@chakra-ui/react"
+import { Avatar, IconButton, IconButtonProps } from "@chakra-ui/react"
 import React from "react"
 
 import { useGetUserProfile } from "api"
 
-export type ButtonProps = {
-  buttonProps?: Omit<IconButtonProps, "aria-label">
-  iconProps?: IconProps
-}
+export type ButtonProps = Omit<IconButtonProps, "aria-label">
 
-export const ProfileButton: React.FC<ButtonProps> = ({ buttonProps, iconProps }) => {
+export const ProfileButton: React.FC<ButtonProps> = (buttonProps) => {
   const { data } = useGetUserProfile()
 
   return (

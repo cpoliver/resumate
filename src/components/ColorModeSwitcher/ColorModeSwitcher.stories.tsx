@@ -5,7 +5,7 @@ import React, { Fragment } from "react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 
 export default {
-  title: "ColorModeSwitcher",
+  title: "Color Mode Switcher",
   component: ColorModeSwitcher,
 } as ComponentMeta<typeof ColorModeSwitcher>
 
@@ -21,7 +21,7 @@ const Template: Story<Args> = ({ mode }) => {
   )
 }
 
-export const Default = Template.bind({})
+export const System = Template.bind({})
 
 export const Light = Template.bind({})
 Light.args = {

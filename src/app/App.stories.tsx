@@ -19,6 +19,3 @@ Loading.parameters = { msw: handlers.loading }
 
 export const Error = Template.bind({})
 Error.parameters = { msw: handlers.error }
-
-export const NoData = Template.bind({})
-NoData.parameters = { msw: handlers.noData }
