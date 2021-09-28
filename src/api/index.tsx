@@ -2,10 +2,9 @@ import axios from "axios"
 import { useQuery } from "react-query"
 
 import { Post, Profile, UserProfile } from "./data"
+import { API_URL } from "common/constants"
 
 export * from "./data"
-
-const API_URL = "https://flynn.boolean.careers/exercises/api/boolgram"
 
 export const useGetProfiles = () =>
   useQuery<Profile[], Error>("profiles", async () => {

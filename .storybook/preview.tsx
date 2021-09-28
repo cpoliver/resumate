@@ -1,6 +1,9 @@
 import React from "react"
 import { Box } from "@chakra-ui/react"
 import { QueryClientProvider, QueryClient } from "react-query"
+import { initialize, mswDecorator } from 'msw-storybook-addon'
+
+initialize()
 
 import { ColorModeSwitcher, ThemeProvider } from "../src/components"
 
@@ -24,7 +27,8 @@ export const decorators = [
         </Box>
       </ThemeProvider>
     </QueryClientProvider>
-  )
+  ),
+  mswDecorator
 ]
 
 export const parameters = {
