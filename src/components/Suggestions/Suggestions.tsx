@@ -6,11 +6,11 @@ import { Suggestion, SuggestionSkeleton } from "./Suggestion"
 import { Profile, useGetProfiles } from "api"
 
 export const Suggestions: React.FC = () => {
-  const { data = [], error, isLoading } = useGetProfiles()
+  const { data = [], error, isLoading, refetch } = useGetProfiles()
 
   if (isLoading) return <SuggestionsLoading />
 
-  if (error) return <ErrorMessage {...error} />
+  if (error) return <ErrorMessage {...error.response?.data} onRetry={refetch} />
 
   return <SuggestionsLoaded suggestions={data} />
 }
