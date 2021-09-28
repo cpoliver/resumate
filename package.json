@@ -25,7 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --passWithNoTests",
     "test:no-watch": "yarn test --watchAll=false",
     "eject": "react-scripts eject",
     "format": "prettier './src/**/*.{js,jsx,ts,tsx}' --write",
