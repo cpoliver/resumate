@@ -1,5 +1,6 @@
 import { Avatar, Box, Button, Link, Spacer, Stack, Text } from "@chakra-ui/react"
 import React from "react"
+import { useTranslation } from "react-i18next"
 
 import { Profile } from "api"
 
@@ -11,6 +12,7 @@ const label: { [key in SuggestionType]: string } = {
 }
 
 export const Suggestion: React.FC<Profile> = ({ profile_name, profile_picture }) => {
+  const { t } = useTranslation()
   const suggestionType = label[profile_name.length % 2 === 0 ? "follower" : "suggestion"]
 
   return (
@@ -19,10 +21,10 @@ export const Suggestion: React.FC<Profile> = ({ profile_name, profile_picture })
       <Stack flex={1} justify="center" spacing="-.125rem">
         <Link variant="profile">{profile_name}</Link>
         <Text color="mode.text2" fontSize="xs">
-          {suggestionType}
+          {t(suggestionType)}
         </Text>
       </Stack>
-      <Button variant="link">Follow</Button>
+      <Button variant="link">{t("Follow")}</Button>
     </Stack>
   )
 }

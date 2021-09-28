@@ -2,6 +2,7 @@ import React from "react"
 import { render } from "react-dom"
 import { QueryClient, QueryClientProvider } from "react-query"
 
+import "./i18n"
 import { App } from "./app"
 import { reportWebVitals } from "./reportWebVitals"
 import { ThemeProvider } from "components"

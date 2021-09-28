@@ -3,9 +3,10 @@ import { Box } from "@chakra-ui/react"
 import { QueryClientProvider, QueryClient } from "react-query"
 import { initialize, mswDecorator } from 'msw-storybook-addon'
 
-initialize()
-
+import "../src/i18n"
 import { ColorModeSwitcher, ThemeProvider } from "../src/components"
+
+initialize()
 
 const queryClient = new QueryClient({
   defaultOptions: {

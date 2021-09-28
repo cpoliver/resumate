@@ -1,5 +1,6 @@
 import { IconButton, IconButtonProps, IconProps } from "@chakra-ui/react"
 import React, { useState } from "react"
+import { useTranslation } from "react-i18next"
 
 import * as Icon from "../Icon/Icon"
 
@@ -22,13 +23,14 @@ export const ToggleButton: React.FC<ToggleButtonProps> = ({
   iconProps,
   ...iconButtonProps
 }) => {
+  const { t } = useTranslation()
   const [isToggled, setIsToggled] = useState(defaultIsToggled)
 
   const index = isToggled ? 0 : 1
 
   const props: IconButtonProps = {
     ...iconButtonProps,
-    "aria-label": labels[index],
+    "aria-label": t(labels[index]),
     icon: icons[index],
     outline: "none",
   }

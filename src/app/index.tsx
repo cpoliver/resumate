@@ -1,5 +1,6 @@
 import { Container, Flex, Stack, Text } from "@chakra-ui/react"
 import React from "react"
+import { useTranslation } from "react-i18next"
 
 import { AppBar, ColorModeSwitcher, Following, Posts, ProfileSwitcher, Suggestions } from "components"
 
@@ -33,12 +34,16 @@ const Content: React.FC = () => (
   </Stack>
 )
 
-const SideBar: React.FC = () => (
-  <Stack as="aside" flex={1} spacing={6}>
-    <ProfileSwitcher />
-    <Suggestions />
-    <Text color="mode.text3" fontSize="xs" textTransform="uppercase">
-      &copy; {new Date().getFullYear()} Killergram from Charlie
-    </Text>
-  </Stack>
-)
+const SideBar: React.FC = () => {
+  const { t } = useTranslation()
+
+  return (
+    <Stack as="aside" flex={1} spacing={6}>
+      <ProfileSwitcher />
+      <Suggestions />
+      <Text color="mode.text3" fontSize="xs" textTransform="uppercase">
+        &copy; {new Date().getFullYear()} {t("Killergram from Charlie")}
+      </Text>
+    </Stack>
+  )
+}

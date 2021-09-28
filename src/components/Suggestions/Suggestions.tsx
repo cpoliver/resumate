@@ -1,5 +1,6 @@
 import { Box, Button, Spacer, Stack, Text } from "@chakra-ui/react"
 import React from "react"
+import { useTranslation } from "react-i18next"
 
 import { ErrorMessage } from "../ErrorMessage/ErrorMessage"
 import { Suggestion, SuggestionSkeleton } from "./Suggestion"
@@ -15,21 +16,25 @@ export const Suggestions: React.FC = () => {
   return <SuggestionsLoaded suggestions={data} />
 }
 
-const SuggestionsLoaded: React.FC<{ suggestions: Profile[] }> = ({ suggestions }) => (
-  <Stack fontSize="sm" spacing={3}>
-    <Stack direction="row">
-      <Text color="mode.text2" flex={1} fontWeight="semibold">
-        Suggestions for you
-      </Text>
-      <Button color="mode.text1" variant="link">
-        See All
-      </Button>
+const SuggestionsLoaded: React.FC<{ suggestions: Profile[] }> = ({ suggestions }) => {
+  const { t } = useTranslation()
+
+  return (
+    <Stack fontSize="sm" spacing={3}>
+      <Stack direction="row">
+        <Text color="mode.text2" flex={1} fontWeight="semibold">
+          {t("Suggestions for you")}
+        </Text>
+        <Button color="mode.text1" variant="link">
+          {t("See All")}
+        </Button>
+      </Stack>
+      {suggestions.map((suggestion) => (
+        <Suggestion key={suggestion.profile_name} {...suggestion} />
+      ))}
     </Stack>
-    {suggestions.map((suggestion) => (
-      <Suggestion key={suggestion.profile_name} {...suggestion} />
-    ))}
-  </Stack>
-)
+  )
+}
 
 const PLACEHOLDER_COUNT = 5
 
