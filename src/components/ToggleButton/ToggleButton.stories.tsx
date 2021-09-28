@@ -4,7 +4,7 @@ import React from "react"
 import { LikeButton, SaveButton, ToggleButton, ToggleButtonProps } from "./ToggleButton"
 
 export default {
-  title: "Toggle Button",
+  title: "Common / Toggle Button",
   component: ToggleButton,
 } as ComponentMeta<typeof ToggleButton>
 

@@ -18,7 +18,7 @@ export const Posts: React.FC<StackProps> = (stackProps) => {
 
 type PostsLoadedProps = { posts: PostProps[] } & StackProps
 
-export const PostsLoaded: React.FC<PostsLoadedProps> = ({ posts, ...stackProps }) => (
+const PostsLoaded: React.FC<PostsLoadedProps> = ({ posts, ...stackProps }) => (
   <Stack {...stackProps}>
     {posts.map((post) => (
       <Post key={post.date.date} {...post} />
@@ -28,7 +28,7 @@ export const PostsLoaded: React.FC<PostsLoadedProps> = ({ posts, ...stackProps }
 
 const PLACEHOLDER_COUNT = 12
 
-export const PostsLoading: React.FC<StackProps> = (stackProps) => (
+const PostsLoading: React.FC<StackProps> = (stackProps) => (
   <Stack {...stackProps}>
     {new Array(PLACEHOLDER_COUNT).fill(0).map((_, i) => (
       <PostSkeleton key={i} />

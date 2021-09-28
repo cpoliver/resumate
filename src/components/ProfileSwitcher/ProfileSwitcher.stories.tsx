@@ -5,7 +5,7 @@ import { ProfileSwitcher } from "./ProfileSwitcher"
 import { handlers } from "api/mocks"
 
 export default {
-  title: "Profile Switcher",
+  title: "Profiles / Profile Switcher",
   component: ProfileSwitcher,
 } as ComponentMeta<typeof ProfileSwitcher>
 

@@ -4,7 +4,7 @@ import React from "react"
 import { ErrorMessage } from "./ErrorMessage"
 
 export default {
-  title: "Error Message",
+  title: "Common / Error Message",
   component: ErrorMessage,
 } as ComponentMeta<typeof ErrorMessage>
 

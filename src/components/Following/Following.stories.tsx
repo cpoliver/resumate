@@ -5,7 +5,7 @@ import { Following } from "./Following"
 import { handlers } from "api/mocks"
 
 export default {
-  title: "Following",
+  title: "Profiles / Following",
   component: Following,
 } as ComponentMeta<typeof Following>
 

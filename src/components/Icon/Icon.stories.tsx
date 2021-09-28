@@ -5,7 +5,7 @@ import React from "react"
 import * as Icon from "./Icon"
 
 export default {
-  title: "Icon",
+  title: "Common / Icon",
 } as Meta<IconProps>
 
 export const AllIcons = () => (

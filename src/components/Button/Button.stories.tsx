@@ -5,7 +5,7 @@ import React from "react"
 import * as Button from "./Button"
 
 export default {
-  title: "Button",
+  title: "Common / Button",
 } as Meta<Button.ButtonProps>
 
 const { ...Buttons } = Button

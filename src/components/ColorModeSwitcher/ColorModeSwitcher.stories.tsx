@@ -5,7 +5,7 @@ import React, { Fragment } from "react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 
 export default {
-  title: "Color Mode Switcher",
+  title: "App / Color Mode Switcher",
   component: ColorModeSwitcher,
 } as ComponentMeta<typeof ColorModeSwitcher>
 

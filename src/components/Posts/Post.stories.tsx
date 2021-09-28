@@ -7,7 +7,7 @@ import { PostSkeleton } from "./PostSkeleton"
 import { post } from "api"
 
 export default {
-  title: "Post",
+  title: "Stories / Post",
   component: Post,
 } as ComponentMeta<typeof Post>
 

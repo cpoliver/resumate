@@ -5,7 +5,7 @@ import { App } from "."
 import { handlers } from "api/mocks"
 
 export default {
-  title: "App",
+  title: "App / App",
   component: App,
 } as ComponentMeta<typeof App>
 
