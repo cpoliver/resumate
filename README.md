@@ -1,5 +1,7 @@
 # Killergram
 
+![Screenshot](https://github.com/cpoliver/killergram/blob/main/public/preview.png)
+
 ## Description
 
 Killergram is simple clone of the Instagram UI, powered by React, Chakra-UI, and TypeScript.
@@ -9,11 +11,11 @@ Killergram is simple clone of the Instagram UI, powered by React, Chakra-UI, and
 - Clone the repository:
   - SSH `git clone git@github.com:cpoliver/killergram.git`
   - HTTPS `https://github.com/cpoliver/killergram.git`
-- Install dependenciess:
+- Install the dependencies:
     `cd ./killergram && yarn`
-- run app
+- Build and run the App
   - `yarn start`
-- run storybook
+- Build and run storybook
     `yarn storybook`
 
 ### Prerequisites
@@ -24,6 +26,7 @@ Killergram is simple clone of the Instagram UI, powered by React, Chakra-UI, and
 ## Key Links
 
 - [Live App](https://cpoliver.github.io/killergram)
+- [Live Storybook](https://cpoliver.github.io/killergram-storybook)
 - [Storybook (via Chromatic)](https://www.chromatic.com/builds?appId=61542738dbe557003a8b8d50&inviteToken=dc54255ab9a24721a28d2471778d735b)
 - [GitHub Repo](https://github.com/cpoliver/killergram)
 - [Trello Board](https://trello.com/invite/b/WSbPMp8b/e8fecd2cb5768edca02a43e0bbfae0b8/boolean-tech-test)
@@ -39,7 +42,7 @@ Killergram is simple clone of the Instagram UI, powered by React, Chakra-UI, and
   - Pre-built and battle tested atomic components - why reinvent the wheel?
 - Storybook
   - Serves as "living documentation"
-  - Intergrates with [Chromatic] for seamless visual regression testing
+  - Integrates with [Chromatic](https://www.chromatic.com) for seamless visual regression testing
   - Great developer experience. Work on one component in isolation
 - Create React App
   - Fast, first-party way to bootstrap a new React App
@@ -48,15 +51,14 @@ Killergram is simple clone of the Instagram UI, powered by React, Chakra-UI, and
 
 ## Features
 
-- Accessibile
-  - Chakra
-  - aria-label, alt tags
-  - keyboard navigation
-  - HTML landmarks
+- Accessible
+  - Chakra UI components
+  - Markup landmarks, aria-label, alt tags
+  - Keyboard navigation
 - Theming
-  - Ensurse consistency with design system
+  - Ensure consistency with design system
   - Dark Mode (branded with Boolean colors)
-- Code quality tooling
+- Code Quality Tooling
   - Husky: pre-commit/pre-push hooks
   - TypeScript
   - Eslint (custom configuration pulled in via npm)
@@ -67,6 +69,7 @@ Killergram is simple clone of the Instagram UI, powered by React, Chakra-UI, and
   - Cursor hover states/text underlines matched to real Instagram site
   - Loading skeleton components
   - Deterministically generate avatars from the username for more variety
+  - Color mode-aware custom favicon (doesn't change with color mode switcher, uses the system color mode)
 
 ## Approach
 
@@ -87,10 +90,10 @@ Killergram is simple clone of the Instagram UI, powered by React, Chakra-UI, and
 
 ## Future Improvements
 
-- Structure app by feature - currently everything is in src/components, however Storybook groups the stories by feature
-- Add translations for react-i18next - currently the i18n library is configured, but not translations have been added
-- More cross browser testing/support
+- Make the app fully-responsive. If this were a real project, I'd have built it mobile-first.
 - Add tests ([Not too many. Mostly integration.](https://kentcdodds.com/blog/write-tests))
+- Add translations for react-i18next - currently the i18n library is configured, but no translations have been added
+- Structure app by feature - currently everything is in src/components, however Storybook groups the stories by feature
 
 ## Tested On
 
