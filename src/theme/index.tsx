@@ -10,22 +10,6 @@ const config: ThemeConfig = {
 }
 
 const layerStyles = {
-  avatarBorder: {
-    borderColor: "mode.text1",
-    borderRadius: "full",
-    borderWidth: "2px",
-    p: "2px",
-  },
-  square: {
-    _after: {
-      content: "''",
-      display: "block",
-      pb: "100%",
-    },
-    h: 0,
-    pt: "100%",
-    w: "100%",
-  },
   loading: {
     animation: loadingAnimation,
   },

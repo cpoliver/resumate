@@ -1,9 +1,5 @@
-import { Avatar, Box, Spacer, Stack } from "@chakra-ui/react"
+import { Avatar, Box, Stack } from "@chakra-ui/react"
 import React from "react"
-
-import { EllipsisButton } from "../Button/Button"
-import { ActionButtons } from "./Post"
-import { PostFooter as Footer } from "./PostFooter"
 
 export const PostSkeleton: React.FC = () => (
   <Stack
@@ -17,7 +13,6 @@ export const PostSkeleton: React.FC = () => (
   >
     <Header />
     <Box bg="mode.text1" layerStyle="square" />
-    <ActionButtons />
     <Stack px={4} py={2} spacing={2}>
       <Box layerStyle="skeleton" w="100%" />
       <Box layerStyle="skeleton" w="80%" />
@@ -25,7 +20,6 @@ export const PostSkeleton: React.FC = () => (
       <Box layerStyle="skeleton" w="100%" />
       <Box layerStyle="skeleton" w="80%" />
     </Stack>
-    <Footer />
   </Stack>
 )
 
@@ -35,7 +29,5 @@ const Header: React.FC = () => (
       <Avatar bg="mode.text1" name=" " size="sm" />
     </Box>
     <Box layerStyle="skeleton" w={32} />
-    <Spacer />
-    <EllipsisButton />
   </Stack>
 )

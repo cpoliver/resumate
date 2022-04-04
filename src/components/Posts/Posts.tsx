@@ -1,17 +1,16 @@
 import { Stack, StackProps } from "@chakra-ui/react"
 import React from "react"
 
-import { ErrorMessage } from "../ErrorMessage/ErrorMessage"
 import { Post } from "./Post"
 import { PostSkeleton } from "./PostSkeleton"
 import { Post as PostProps, useGetPosts } from "api"
 
 export const Posts: React.FC<StackProps> = (stackProps) => {
-  const { data = [], error, isLoading, refetch } = useGetPosts()
+  const { data = [], error, isLoading } = useGetPosts()
 
   if (isLoading) return <PostsLoading {...stackProps} />
 
-  if (error) return <ErrorMessage {...error.response?.data} onRetry={refetch} />
+  if (error) return <pre>{JSON.stringify(error)}</pre>
 
   return <PostsLoaded {...stackProps} posts={data} />
 }
