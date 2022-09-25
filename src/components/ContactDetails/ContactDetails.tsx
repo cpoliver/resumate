@@ -4,14 +4,14 @@ import React from "react"
 import { Resume } from "types"
 import { ContactInfo, ContactInfoCustom, ContactInfoEmail, ContactInfoPhone, ContactInfoType } from "types/contactInfo"
 
-export type ContactDetailsProps = Pick<Resume, "contactInfo">
-
 const getKey = (contactInfo: ContactInfo): string => {
   if (contactInfo.type === "phone") return contactInfo.number
   if (contactInfo.type === "email") return contactInfo.emailAddress
 
   return contactInfo.value
 }
+
+export type ContactDetailsProps = Pick<Resume, "contactInfo">
 
 export const ContactDetails: React.FC<ContactDetailsProps> = ({ contactInfo }) => (
   <Stack gap={4}>
