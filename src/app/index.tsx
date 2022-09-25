@@ -1,7 +1,7 @@
 import { Container, Flex, Stack } from "@chakra-ui/react"
 import React from "react"
 
-import { ColorModeSwitcher, Posts } from "components"
+import { ColorModeSwitcher } from "components"
 
 export const App: React.FC = () => (
   <AppShell>
@@ -26,6 +26,6 @@ const AppShell: React.FC = ({ children }) => (
 
 const Content: React.FC = () => (
   <Stack as="section" flex={2} spacing={6}>
-    <Posts />
+    TBC
   </Stack>
 )
