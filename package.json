@@ -1,8 +1,8 @@
 {
-  "name": "await-react-app",
+  "name": "resumate",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/await-solutions/await-react-app",
+  "homepage": "hhttps://github.com/cpoliver/resumate",
   "dependencies": {
     "@chakra-ui/react": "^1.6.7",
     "@emotion/react": "^11.4.1",

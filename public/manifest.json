@@ -1,6 +1,6 @@
 {
-  "short_name": "Killergram",
-  "name": "Killergram: A killer clone of the Instagram UI built with React + TypeScript",
+  "short_name": "Resumate",
+  "name": "Resumate: A A simple résumé/CV builder written in React + TypeScript",
   "icons": [
     {
       "src": "favicon.ico",
