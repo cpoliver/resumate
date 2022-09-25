@@ -6,7 +6,7 @@ import { Summary } from "./summary"
 export type Resume = {
   name: Name
   contactInfo: ContactInfo[]
-  links: Link
+  links: Link[]
   summary: Summary
   history: History
 }
