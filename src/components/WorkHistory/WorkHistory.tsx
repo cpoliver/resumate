@@ -2,6 +2,7 @@ import { Badge, Flex, List, ListItem, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { formatDuration } from "common/utils"
+import { TechnologyIcon } from "components/TechnologyIcon/TechnologyIcon"
 import { Resume } from "types"
 import { WorkHistoryItem as WorkHistoryItemProps } from "types/workHistory"
 
@@ -50,9 +51,12 @@ const ItemList: React.FC<Pick<WorkHistoryItemProps, "items">> = ({ items }) => (
 
 const TechnologyList: React.FC<Pick<WorkHistoryItemProps, "technologies">> = ({ technologies }) =>
   technologies?.length ? (
-    <List>
+    <Flex gap={8}>
       {technologies.map((technology) => (
-        <ListItem key={technology.name}>{technology.name}</ListItem>
+        <Flex key={technology.name} align="center" gap={2}>
+          <TechnologyIcon technology={technology} hideLabel />
+          <Text fontSize="sm">{technology.name}</Text>
+        </Flex>
       ))}
-    </List>
+    </Flex>
   ) : null

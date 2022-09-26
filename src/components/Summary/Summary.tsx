@@ -2,6 +2,7 @@ import { Flex, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { formatDuration } from "common/utils"
+import { TechnologyIcon } from "components/TechnologyIcon/TechnologyIcon"
 import { Resume } from "types"
 import { Education, KeySkill, SkillType, SoftSkill, TechnicalSkill, Training } from "types/summary"
 
@@ -40,12 +41,12 @@ const SummaryItemTechnicalSkill: React.FC<TechnicalSkill> = ({
   yearsExperience,
   skillLevel,
 }) => (
-  <Stack spacing={0}>
-    <Text>{technology.name}</Text>
+  <Flex>
+    <TechnologyIcon technology={technology} />
     <Text>{description}</Text>
     {yearsExperience && <Text>{yearsExperience}</Text>}
     {skillLevel && <Text>{skillLevel}</Text>}
-  </Stack>
+  </Flex>
 )
 
 const SummaryItemSoftSkill: React.FC<SoftSkill> = ({ description, yearsExperience, skillLevel }) => (
