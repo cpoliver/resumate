@@ -12,9 +12,10 @@ export const ColorModeSwitcher: React.FC = () => {
       aria-label={t("Change color mode to {{mode}}", { mode: colorMode === "dark" ? "Light" : "Dark" })}
       bg={colorMode === "dark" ? "rgba(255,255,255,.05)" : "rgba(0,0,0,.05)"}
       color="mode.text1"
+      p={0}
+      rounded="full"
       size="sm"
       textTransform="capitalize"
-      isRound
       onClick={toggleColorMode}
     >
       {icon}
