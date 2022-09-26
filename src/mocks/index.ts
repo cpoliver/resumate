@@ -1,0 +1,6 @@
+export * from "./contactDetails"
+export * from "./links"
+export * from "./name"
+export * from "./resume"
+export * from "./summary"
+export * from "./workHistory"
