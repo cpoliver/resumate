@@ -1,4 +1,4 @@
-import { KeySkill, Profile, SoftSkill, Summary, TechnicalSkill } from "types/summary"
+import { Profile, SoftSkill, Summary, TechnicalSkill } from "types/summary"
 import { technology } from "./technology"
 
 const profile: Profile = {
