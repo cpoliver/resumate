@@ -1,7 +1,11 @@
 import { Resume } from "types"
-import { name, contactDetails, links, summary, workHistory } from "mocks"
+import { name } from "mocks/name"
+import { contactDetails } from "mocks/contactDetails"
+import { links } from "mocks/links"
+import { summary } from "mocks/summary"
+import { workHistory } from "mocks/workHistory"
 
-const standard: Partial<Resume> = {
+const standard: Resume = {
   name: name.standard,
   contactDetails: contactDetails.standard,
   links: links.standard,
@@ -9,7 +13,7 @@ const standard: Partial<Resume> = {
   workHistory: workHistory.standard,
 }
 
-const full: Partial<Resume> = {
+const full: Resume = {
   name: name.full,
   contactDetails: contactDetails.full,
   links: links.full,

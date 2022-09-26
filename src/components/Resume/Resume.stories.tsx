@@ -21,7 +21,7 @@ Standard.args = {
   ...resume.standard,
 }
 
-export const Full = Template.bind({})
+export const Full = Template
 Full.args = {
   ...resume.full,
 }

@@ -60,7 +60,7 @@ const technicalSkills: TechnicalSkill[] = [
 
 const standard: Summary = {
   profile,
-  keySkills: [...softSkills, ...technicalSkills.slice(0, 5)],
+  keySkills: [...softSkills, ...technicalSkills],
 }
 
 const full: Summary = {
@@ -69,6 +69,6 @@ const full: Summary = {
 }
 
 export const summary = {
-  standard,
+  standard: full,
   full,
 }

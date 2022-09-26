@@ -1,7 +1,8 @@
 import { Container, Flex, Stack } from "@chakra-ui/react"
 import React from "react"
 
-import { ColorModeSwitcher } from "components"
+import { ColorModeSwitcher, Resume } from "components"
+import { resume } from "mocks/resume"
 
 export const App: React.FC = () => (
   <AppShell>
@@ -26,6 +27,6 @@ const AppShell: React.FC = ({ children }) => (
 
 const Content: React.FC = () => (
   <Stack as="section" flex={2} spacing={6}>
-    TBC
+    <Resume {...resume.full} />
   </Stack>
 )
