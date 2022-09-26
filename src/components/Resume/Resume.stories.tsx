@@ -16,8 +16,8 @@ const Template: Story<ResumeProps> = (args) => (
   </Flex>
 )
 
-export const Standard = Template.bind({})
-Standard.args = {
+export const Default = Template.bind({})
+Default.args = {
   ...resume.standard,
 }
 

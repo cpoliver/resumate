@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react"
 import React from "react"
 
 import { Links, LinksProps } from "./Links"
-import { LinkCustom, LinkStandard } from "types/link"
+import { links } from "mocks/links"
 
 export default {
   title: "Components / Links",
@@ -16,19 +16,12 @@ const Template: Story<LinksProps> = (args) => (
   </Flex>
 )
 
-const standard: LinkStandard = {
-  type: "linkedin",
-  username: "cpoliver",
-  url: "",
-}
-
-const custom: LinkCustom = {
-  type: "custom",
-  label: "portfilio",
-  url: "",
-}
-
 export const Default = Template.bind({})
 Default.args = {
-  links: [standard, custom],
+  links: links.standard,
+}
+
+export const Full = Template.bind({})
+Full.args = {
+  links: links.full,
 }

@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react"
 import React from "react"
 
 import { ContactDetails, ContactDetailsProps } from "./ContactDetails"
-import { ContactDetailsCustom, ContactDetailsEmail, ContactDetailsPhone } from "types/contactDetails"
+import { contactDetails } from "mocks/contactDetails"
 
 export default {
   title: "Components / Contact Details",
@@ -16,24 +16,12 @@ const Template: Story<ContactDetailsProps> = (args) => (
   </Flex>
 )
 
-const phone: ContactDetailsPhone = {
-  type: "phone",
-  countryCode: "+44",
-  number: "7000000000",
-}
-
-const email: ContactDetailsEmail = {
-  type: "email",
-  emailAddress: "user@test.com",
-}
-
-const custom: ContactDetailsCustom = {
-  type: "custom",
-  label: "skype",
-  value: "@username",
-}
-
 export const Default = Template.bind({})
 Default.args = {
-  contactDetails: [phone, email, custom],
+  contactDetails: contactDetails.standard,
+}
+
+export const Full = Template.bind({})
+Full.args = {
+  contactDetails: contactDetails.full,
 }

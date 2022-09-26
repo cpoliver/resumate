@@ -1,4 +1,4 @@
-import { Profile, SoftSkill, Summary, TechnicalSkill } from "types/summary"
+import { Education, Profile, SoftSkill, Summary, TechnicalSkill, Training } from "types/summary"
 import { technology } from "./technology"
 
 const profile: Profile = {
@@ -58,17 +58,45 @@ const technicalSkills: TechnicalSkill[] = [
   },
 ].map((technicalSkill) => ({ type: "technical", ...technicalSkill }))
 
+const education: Education = {
+  type: "education",
+  institution: {
+    name: "Hull College of Art and Design",
+  },
+  course: "National Diploma in Graphic Design",
+  grade: "Double Merit",
+  duration: {
+    from: {
+      month: 9,
+      year: 2004,
+    },
+    to: {
+      month: 7,
+      year: 2006,
+    },
+  },
+}
+
+const training: Training = {
+  type: "training",
+  institution: {
+    name: "Interaction Design Foundation",
+    url: "",
+  },
+  course: "User Experience: The Beginner's Guide",
+}
+
 const standard: Summary = {
   profile,
-  keySkills: [...softSkills, ...technicalSkills],
+  keySkills: [...softSkills, ...technicalSkills.slice(0, 5), training],
 }
 
 const full: Summary = {
   profile,
-  keySkills: [...softSkills, ...technicalSkills],
+  keySkills: [...softSkills, ...technicalSkills, education, training],
 }
 
 export const summary = {
-  standard: full,
+  standard,
   full,
 }

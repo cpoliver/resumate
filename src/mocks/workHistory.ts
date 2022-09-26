@@ -145,7 +145,7 @@ const sky: WorkHistoryItem = {
     name: "Sky",
     url: "https://www.sky.com",
   },
-  role: "",
+  role: "Full-Stack Developer",
   workType: "contract",
   duration: {
     from: {

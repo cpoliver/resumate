@@ -2,7 +2,7 @@ import { Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { Resume } from "types"
-import { Link, LinkCustom, LinkStandard } from "types/link"
+import { Link, LinkCustom, LinkDefault } from "types/link"
 
 export type LinksProps = Pick<Resume, "links">
 
@@ -17,10 +17,10 @@ export const Links: React.FC<LinksProps> = ({ links }) => (
 const LinkItem: React.FC<Link> = (link) => {
   if (link.type === "custom") return <LinkItemCustom {...(link as LinkCustom)} />
 
-  return <LinkItemStandard {...(link as LinkStandard)} />
+  return <LinkItemDefault {...(link as LinkDefault)} />
 }
 
-const LinkItemStandard: React.FC<LinkStandard> = ({ type, url, username }) => (
+const LinkItemDefault: React.FC<LinkDefault> = ({ type, url, username }) => (
   <Stack spacing={0}>
     <Text>{type}</Text>
     <Text>{url}</Text>

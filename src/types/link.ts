@@ -1,6 +1,6 @@
 export type LinkType = "linkedin" | "github" | "stackoverflow" | "twitter" | "dribbble" | "custom"
 
-export type LinkStandard = {
+export type LinkDefault = {
   type: Omit<LinkType, "custom">
   url: string
   username?: string
@@ -13,4 +13,4 @@ export type LinkCustom = {
   username?: string
 }
 
-export type Link = LinkStandard | LinkCustom
+export type Link = LinkDefault | LinkCustom

@@ -3,6 +3,7 @@ import { Meta, Story } from "@storybook/react"
 import React from "react"
 
 import { Name, NameProps } from "./Name"
+import { name } from "mocks/name"
 
 export default {
   title: "Components / Name",
@@ -15,16 +16,12 @@ const Template: Story<NameProps> = (args) => (
   </Flex>
 )
 
-export const Simple = Template.bind({})
-Simple.args = {
-  firstName: "Charles",
-  lastName: "Oliver",
+export const Default = Template.bind({})
+Default.args = {
+  ...name.standard,
 }
 
 export const Full = Template.bind({})
 Full.args = {
-  ...Simple.args,
-  title: "Dr.",
-  middleName: "Peter",
-  postnomials: "PhD",
+  ...name.full,
 }

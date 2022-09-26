@@ -27,6 +27,6 @@ const AppShell: React.FC = ({ children }) => (
 
 const Content: React.FC = () => (
   <Stack as="section" flex={2} spacing={6}>
-    <Resume {...resume.full} />
+    <Resume {...resume.standard} />
   </Stack>
 )
