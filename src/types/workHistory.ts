@@ -2,7 +2,7 @@ import { Duration, Organisation, Technology } from "./common"
 
 export type WorkType = "contract" | "permanent" | "freelance"
 
-export type History = {
+export type WorkHistoryItem = {
   company: Organisation
   role: string
   workType: WorkType
@@ -10,4 +10,6 @@ export type History = {
   summary?: string
   items: string[]
   technologies: Technology[]
+  location?: string
+  isRemote?: boolean
 }
