@@ -2,51 +2,57 @@ import { Flex, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { Resume } from "types"
-import { ContactInfo, ContactInfoCustom, ContactInfoEmail, ContactInfoPhone, ContactInfoType } from "types/contactInfo"
+import {
+  ContactDetailsCustom,
+  ContactDetailsEmail,
+  ContactDetailsPhone,
+  ContactDetails as ContactDetailsType,
+  ContactType,
+} from "types/contactDetails"
 
-const getKey = (contactInfo: ContactInfo): string => {
-  if (contactInfo.type === "phone") return contactInfo.number
-  if (contactInfo.type === "email") return contactInfo.emailAddress
+const getKey = (contactDetails: ContactDetailsType): string => {
+  if (contactDetails.type === "phone") return contactDetails.number
+  if (contactDetails.type === "email") return contactDetails.emailAddress
 
-  return contactInfo.value
+  return contactDetails.value
 }
 
-export type ContactDetailsProps = Pick<Resume, "contactInfo">
+export type ContactDetailsProps = Pick<Resume, "contactDetails">
 
-export const ContactDetails: React.FC<ContactDetailsProps> = ({ contactInfo }) => (
+export const ContactDetails: React.FC<ContactDetailsProps> = ({ contactDetails }) => (
   <Stack gap={4}>
-    {contactInfo.map((contactItem) => (
+    {contactDetails.map((contactItem) => (
       <ContactItem key={getKey(contactItem)} {...contactItem} />
     ))}
   </Stack>
 )
 
-const ContactItem: React.FC<ContactInfo> = (contactInfo) => {
-  const map: Record<ContactInfoType, React.ReactElement> = {
-    phone: <ContactItemPhone {...(contactInfo as ContactInfoPhone)} />,
-    email: <ContactItemEmail {...(contactInfo as ContactInfoEmail)} />,
-    custom: <ContactItemCustom {...(contactInfo as ContactInfoCustom)} />,
+const ContactItem: React.FC<ContactDetailsType> = (contactDetails) => {
+  const map: Record<ContactType, React.ReactElement> = {
+    phone: <ContactItemPhone {...(contactDetails as ContactDetailsPhone)} />,
+    email: <ContactItemEmail {...(contactDetails as ContactDetailsEmail)} />,
+    custom: <ContactItemCustom {...(contactDetails as ContactDetailsCustom)} />,
   }
 
-  return map[contactInfo.type]
+  return map[contactDetails.type]
 }
 
-const ContactItemPhone: React.FC<ContactInfoPhone> = (contactInfo) => (
+const ContactItemPhone: React.FC<ContactDetailsPhone> = (contactDetails) => (
   <Flex>
-    <Text>{contactInfo.countryCode}</Text>
-    <Text>{contactInfo.number}</Text>
+    <Text>{contactDetails.countryCode}</Text>
+    <Text>{contactDetails.number}</Text>
   </Flex>
 )
 
-const ContactItemEmail: React.FC<ContactInfoEmail> = (contactInfo) => (
+const ContactItemEmail: React.FC<ContactDetailsEmail> = (contactDetails) => (
   <Flex>
-    <Text>{contactInfo.emailAddress}</Text>
+    <Text>{contactDetails.emailAddress}</Text>
   </Flex>
 )
 
-const ContactItemCustom: React.FC<ContactInfoCustom> = (contactInfo) => (
+const ContactItemCustom: React.FC<ContactDetailsCustom> = (contactDetails) => (
   <Flex>
-    <Text>{contactInfo.label}</Text>
-    <Text>{contactInfo.value}</Text>
+    <Text>{contactDetails.label}</Text>
+    <Text>{contactDetails.value}</Text>
   </Flex>
 )

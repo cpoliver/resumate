@@ -1,11 +1,11 @@
-import { ContactInfo } from "./contactInfo"
+import { ContactDetails } from "./contactDetails"
 import { Link } from "./link"
 import { Summary } from "./summary"
 import { WorkHistoryItem } from "./workHistory"
 
 export type Resume = {
   name: Name
-  contactInfo: ContactInfo[]
+  contactDetails: ContactDetails[]
   links: Link[]
   summary: Summary
   workHistory: WorkHistoryItem[]
