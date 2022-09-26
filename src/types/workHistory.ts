@@ -7,9 +7,9 @@ export type WorkHistoryItem = {
   role: string
   workType: WorkType
   duration: Duration
-  summary?: string
   items: string[]
-  technologies: Technology[]
+  summary?: string
+  technologies?: Technology[]
   location?: string
   isRemote?: boolean
 }

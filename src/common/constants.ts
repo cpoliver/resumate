@@ -1,5 +1,6 @@
 // TODO: get using new Date()?
 export const MONTH_NAMES = [
+  undefined,
   "January",
   "February",
   "March",

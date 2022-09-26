@@ -1,11 +1,13 @@
 import { Flex, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
+import { formatDuration } from "common/utils"
 import { Resume } from "types"
 import { Education, KeySkill, SkillType, SoftSkill, TechnicalSkill, Training } from "types/summary"
 
 const getKey = (keySkill: KeySkill): string => {
-  if (keySkill.type === "technical" || keySkill.type === "soft") return keySkill.description
+  if (keySkill.type === "soft") return keySkill.description
+  if (keySkill.type === "technical") return keySkill.technology.name
 
   return keySkill.course
 }
@@ -61,12 +63,7 @@ const SummaryItemEducation: React.FC<Education> = ({ institution, course, grade,
     {grade && <Text>{grade}</Text>}
     {duration && (
       <Flex>
-        <Text>
-          {duration.from.month}/{duration.from.year}
-        </Text>
-        <Text>
-          {duration.to.month}/{duration.to.year}
-        </Text>
+        <Text>{formatDuration(duration)}</Text>
       </Flex>
     )}
   </Stack>
@@ -82,9 +79,7 @@ const SummaryItemTraining: React.FC<Training> = ({ institution, course, duration
         <Text>
           {duration.from.month}/{duration.from.year}
         </Text>
-        <Text>
-          {duration.to.month}/{duration.to.year}
-        </Text>
+        <Text>{formatDuration(duration)}</Text>
       </Flex>
     )}
   </Stack>

@@ -16,7 +16,7 @@ export type SkillLevel = "basic" | "intermediate" | "advanced" | "expert"
 export type TechnicalSkill = {
   type: "technical"
   technology: Technology
-  description: string
+  description?: string
   yearsExperience?: number
   skillLevel?: SkillLevel
 }
