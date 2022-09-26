@@ -1,3 +1,15 @@
-export const API_URL = "https://flynn.boolean.careers/exercises/api/boolgram"
-
-export const POSTS_URL = `${API_URL}/posts`
+// TODO: get using new Date()?
+export const MONTH_NAMES = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+]
