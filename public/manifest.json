@@ -1,6 +1,6 @@
 {
   "short_name": "Resumate",
-  "name": "Resumate: A A simple résumé/CV builder written in React + TypeScript",
+  "name": "Resumate: A simple résumé/CV builder written in React + TypeScript",
   "icons": [
     {
       "src": "favicon.ico",
