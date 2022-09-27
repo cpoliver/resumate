@@ -1,26 +1,26 @@
 import { Technology } from "types/common"
 
-const angular: Technology = { name: "AngularJS", icon: "angular" }
+const angular: Technology = { name: "AngularJS", type: "angular" }
 
-const cSharp: Technology = { name: "C#", icon: "csharp" }
+const cSharp: Technology = { name: "C#", type: "csharp" }
 
-const css: Technology = { name: "CSS", icon: "css" }
+const css: Technology = { name: "CSS", type: "css" }
 
-const elixir: Technology = { name: "Elixir", icon: "elixir" }
+const elixir: Technology = { name: "Elixir", type: "elixir" }
 
-const html: Technology = { name: "HTML", icon: "html" }
+const html: Technology = { name: "HTML", type: "html" }
 
-const javascript: Technology = { name: "JavaScript", icon: "javascript" }
+const javascript: Technology = { name: "JavaScript", type: "javascript" }
 
-const node: Technology = { name: "NodeJS", icon: "node" }
+const node: Technology = { name: "NodeJS", type: "node" }
 
-const react: Technology = { name: "React", icon: "react" }
+const react: Technology = { name: "React", type: "react" }
 
-const reactNative: Technology = { name: "React Native" }
+const reactNative: Technology = { name: "React Native", type: "react-native" }
 
-const sql: Technology = { name: "SQL" }
+const sql: Technology = { name: "SQL", type: "sql" }
 
-const typescript: Technology = { name: "TypeScript", icon: "typescript" }
+const typescript: Technology = { name: "TypeScript", type: "typescript" }
 
 export const technology = {
   angular,

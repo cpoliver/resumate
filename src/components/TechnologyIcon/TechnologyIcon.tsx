@@ -8,7 +8,9 @@ import { ReactComponent as ElixirIcon } from "resources/icons/technology/elixir.
 import { ReactComponent as HtmlIcon } from "resources/icons/technology/html.svg"
 import { ReactComponent as JavaScriptIcon } from "resources/icons/technology/javascript.svg"
 import { ReactComponent as NodeIcon } from "resources/icons/technology/node.svg"
+import { ReactComponent as ReactNativeIcon } from "resources/icons/technology/react-native.svg"
 import { ReactComponent as ReactIcon } from "resources/icons/technology/react.svg"
+import { ReactComponent as SqlIcon } from "resources/icons/technology/sql.svg"
 import { ReactComponent as TypeScriptIcon } from "resources/icons/technology/typescript.svg"
 import { Technology } from "types/common"
 
@@ -22,7 +24,8 @@ const ICON_MAP: Record<string, ReactElement> = {
   javascript: <JavaScriptIcon />,
   node: <NodeIcon />,
   react: <ReactIcon />,
-  reactNative: <ReactIcon />,
+  reactNative: <ReactNativeIcon />,
+  sql: <SqlIcon />,
   typescript: <TypeScriptIcon />,
 }
 
@@ -32,9 +35,9 @@ type TechnologyIconProps = Omit<IconProps, "css"> & {
 }
 
 export const TechnologyIcon: React.FC<TechnologyIconProps> = ({ technology, hideLabel, ...iconProps }) =>
-  technology.icon ? (
+  technology.type ? (
     <Flex>
-      <Icon {...iconProps}> {ICON_MAP[technology.icon]}</Icon>
+      <Icon {...iconProps}> {ICON_MAP[technology.type]}</Icon>
       {!hideLabel && <Text fontSize="sm">{technology.name}</Text>}
     </Flex>
   ) : null

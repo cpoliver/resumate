@@ -18,6 +18,6 @@ export type Organisation = {
 }
 
 export type Technology = {
+  type: string
   name: string
-  icon?: string
 }
