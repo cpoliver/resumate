@@ -1,8 +1,9 @@
-import { Stack, Text } from "@chakra-ui/react"
+import { Flex, LinkBox, LinkOverlay, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
+import { LinkIcon } from "components/LinkIcon/LinkIcon"
 import { Resume } from "types"
-import { Link, LinkCustom, LinkDefault } from "types/link"
+import { Link as LinkProps } from "types/link"
 
 export type LinksProps = Pick<Resume, "links">
 
@@ -14,24 +15,13 @@ export const Links: React.FC<LinksProps> = ({ links }) => (
   </Stack>
 )
 
-const LinkItem: React.FC<Link> = (link) => {
-  if (link.type === "custom") return <LinkItemCustom {...(link as LinkCustom)} />
-
-  return <LinkItemDefault {...(link as LinkDefault)} />
-}
-
-const LinkItemDefault: React.FC<LinkDefault> = ({ type, url, username }) => (
-  <Stack spacing={0}>
-    <Text>{type}</Text>
-    <Text>{url}</Text>
-    <Text>{username}</Text>
-  </Stack>
-)
-
-const LinkItemCustom: React.FC<LinkCustom> = ({ label, url, username }) => (
-  <Stack spacing={0}>
-    <Text>{label}</Text>
-    <Text>{url}</Text>
-    <Text>{username}</Text>
-  </Stack>
+const LinkItem: React.FC<LinkProps> = (link) => (
+  <LinkBox>
+    <LinkOverlay href={link.url ?? "#"}>
+      <Flex align="center" gap={2}>
+        <LinkIcon boxSize={8} link={link}></LinkIcon>
+        {link.username ? <Text>@{link.username}</Text> : <Text>{link.name}</Text>}
+      </Flex>
+    </LinkOverlay>
+  </LinkBox>
 )
