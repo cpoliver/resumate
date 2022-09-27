@@ -1,4 +1,4 @@
-import { Stack, Text } from "@chakra-ui/react"
+import { Heading, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { Name as NameType } from "types"
@@ -6,11 +6,19 @@ import { Name as NameType } from "types"
 export type NameProps = NameType
 
 export const Name: React.FC<NameProps> = ({ title, firstName, middleName, lastName, postnomials }) => (
-  <Stack direction="row" spacing={1}>
-    {title && <Text>{title}</Text>}
-    <Text>{firstName}</Text>
-    {middleName && <Text>{middleName}</Text>}
-    <Text>{lastName}</Text>
-    {postnomials && <Text>{postnomials}</Text>}
-  </Stack>
+  <Heading as="h2" display="inline-flex">
+    {title && (
+      <Text as="span" fontWeight="normal">
+        {title}&nbsp;
+      </Text>
+    )}
+    <Text>{firstName}&nbsp;</Text>
+    {middleName && <Text>{middleName}&nbsp;</Text>}
+    <Text>{lastName}&nbsp;</Text>
+    {postnomials && (
+      <Text as="span" fontWeight="normal">
+        {postnomials}
+      </Text>
+    )}
+  </Heading>
 )

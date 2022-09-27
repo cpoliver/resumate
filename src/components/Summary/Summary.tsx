@@ -1,4 +1,4 @@
-import { Flex, Stack, Text } from "@chakra-ui/react"
+import { Flex, List, ListItem, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { formatDuration } from "common/utils"
@@ -18,9 +18,11 @@ export type SummaryProps = Resume["summary"]
 export const Summary: React.FC<SummaryProps> = ({ profile, keySkills }) => (
   <Stack gap={4}>
     <Text>{profile.description}</Text>
-    {keySkills.map((keySkill) => (
-      <SummaryItem key={getKey(keySkill)} {...keySkill} />
-    ))}
+    <List>
+      {keySkills.map((keySkill) => (
+        <SummaryItem key={getKey(keySkill)} {...keySkill} />
+      ))}
+    </List>
   </Stack>
 )
 
@@ -32,7 +34,7 @@ const SummaryItem: React.FC<KeySkill> = (keySkill) => {
     training: <SummaryItemTraining {...(keySkill as Training)} />,
   }
 
-  return map[keySkill.type]
+  return <ListItem>{map[keySkill.type]}</ListItem>
 }
 
 const SummaryItemTechnicalSkill: React.FC<TechnicalSkill> = ({

@@ -5,6 +5,7 @@ import { WorkHistoryItem } from "./workHistory"
 
 export type Resume = {
   name: Name
+  title: string
   contactDetails: ContactDetails[]
   links: Link[]
   summary: Summary
