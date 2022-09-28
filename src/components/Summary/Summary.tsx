@@ -1,4 +1,4 @@
-import { Flex, Heading, List, ListItem, Stack, Text } from "@chakra-ui/react"
+import { Badge, Box, Flex, Heading, List, ListItem, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { formatDuration } from "common/utils"
@@ -61,11 +61,21 @@ const SummaryItemTechnicalSkill: React.FC<TechnicalSkill> = ({
   yearsExperience,
   skillLevel,
 }) => (
-  <Flex align="center" gap={2}>
-    <TechnologyIcon technology={technology} />
-    {description && <Text>{description}</Text>}
-    {yearsExperience && <Text fontSize="sm"> • {yearsExperience} years</Text>}
-    {skillLevel && <Text fontSize="sm"> • {skillLevel}</Text>}
+  <Flex align="center" gap={2} maxW="50%">
+    <Box flex={1}>
+      <TechnologyIcon technology={technology} />
+    </Box>
+    {description && <Text flex={1}>{description}</Text>}
+    {yearsExperience && (
+      <Text flex={1} fontSize="sm">
+        {yearsExperience} years
+      </Text>
+    )}
+    {skillLevel && (
+      <Box flex={1}>
+        <Badge size="sm">{skillLevel}</Badge>
+      </Box>
+    )}
   </Flex>
 )
 
