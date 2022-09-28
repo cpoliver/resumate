@@ -36,7 +36,7 @@ type TechnologyIconProps = Omit<IconProps, "css"> & {
 
 export const TechnologyIcon: React.FC<TechnologyIconProps> = ({ technology, hideLabel, ...iconProps }) =>
   technology.type ? (
-    <Flex>
+    <Flex align="center" gap={2}>
       <Icon {...iconProps}> {ICON_MAP[technology.type]}</Icon>
       {!hideLabel && <Text fontSize="sm">{technology.name}</Text>}
     </Flex>

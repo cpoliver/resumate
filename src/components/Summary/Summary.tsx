@@ -1,4 +1,4 @@
-import { Flex, List, ListItem, Stack, Text } from "@chakra-ui/react"
+import { Flex, Heading, List, ListItem, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { formatDuration } from "common/utils"
@@ -17,8 +17,26 @@ export type SummaryProps = Resume["summary"]
 
 export const Summary: React.FC<SummaryProps> = ({ profile, keySkills }) => (
   <Stack gap={4}>
-    <Text>{profile.description}</Text>
-    <List>
+    <Profile {...profile} />
+    <KeySkills keySkills={keySkills} />
+  </Stack>
+)
+
+const Profile: React.FC<SummaryProps["profile"]> = ({ description }) => (
+  <Stack>
+    <Heading as="h4" size="md">
+      Profile
+    </Heading>
+    <Text>{description}</Text>
+  </Stack>
+)
+
+const KeySkills: React.FC<{ keySkills: KeySkill[] }> = ({ keySkills }) => (
+  <Stack>
+    <Heading as="h4" size="md">
+      Key Skills
+    </Heading>
+    <List as={Stack} spacing={2}>
       {keySkills.map((keySkill) => (
         <SummaryItem key={getKey(keySkill)} {...keySkill} />
       ))}
@@ -43,17 +61,17 @@ const SummaryItemTechnicalSkill: React.FC<TechnicalSkill> = ({
   yearsExperience,
   skillLevel,
 }) => (
-  <Flex>
+  <Flex align="center" gap={2}>
     <TechnologyIcon technology={technology} />
-    <Text>{description}</Text>
-    {yearsExperience && <Text>{yearsExperience}</Text>}
-    {skillLevel && <Text>{skillLevel}</Text>}
+    {description && <Text>{description}</Text>}
+    {yearsExperience && <Text fontSize="sm"> • {yearsExperience} years</Text>}
+    {skillLevel && <Text fontSize="sm"> • {skillLevel}</Text>}
   </Flex>
 )
 
 const SummaryItemSoftSkill: React.FC<SoftSkill> = ({ description, yearsExperience, skillLevel }) => (
   <Stack spacing={0}>
-    <Text>{description}</Text>
+    <Text>• {description}</Text>
     {yearsExperience && <Text>{yearsExperience}</Text>}
     {skillLevel && <Text>{skillLevel}</Text>}
   </Stack>

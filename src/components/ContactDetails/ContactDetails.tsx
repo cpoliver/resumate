@@ -20,11 +20,11 @@ const getKey = (contactDetails: ContactDetailsType): string => {
 export type ContactDetailsProps = Pick<Resume, "contactDetails">
 
 export const ContactDetails: React.FC<ContactDetailsProps> = ({ contactDetails }) => (
-  <Stack gap={4}>
+  <Flex align="baseline" flexWrap="wrap" gap={4}>
     {contactDetails.map((contactItem) => (
       <ContactItem key={getKey(contactItem)} {...contactItem} />
     ))}
-  </Stack>
+  </Flex>
 )
 
 const ContactItem: React.FC<ContactDetailsType> = (contactDetails) => {
@@ -38,21 +38,31 @@ const ContactItem: React.FC<ContactDetailsType> = (contactDetails) => {
 }
 
 const ContactItemPhone: React.FC<ContactDetailsPhone> = (contactDetails) => (
-  <Flex>
-    <Text>{contactDetails.countryCode}</Text>
-    <Text>{contactDetails.number}</Text>
+  <Flex align="center">
+    {/* TODO: support icons */}
+    <Text fontSize="sm" opacity={0.8}>
+      phone:&nbsp;
+    </Text>
+    <Text>
+      ({contactDetails.countryCode})&nbsp;{contactDetails.number}
+    </Text>
   </Flex>
 )
 
 const ContactItemEmail: React.FC<ContactDetailsEmail> = (contactDetails) => (
-  <Flex>
+  <Flex align="center">
+    <Text fontSize="sm" opacity={0.8}>
+      email:&nbsp;
+    </Text>
     <Text>{contactDetails.emailAddress}</Text>
   </Flex>
 )
 
 const ContactItemCustom: React.FC<ContactDetailsCustom> = (contactDetails) => (
-  <Flex>
-    <Text>{contactDetails.label}</Text>
+  <Flex align="baseline">
+    <Text fontSize="sm" opacity={0.8}>
+      {contactDetails.label}:&nbsp;
+    </Text>
     <Text>{contactDetails.value}</Text>
   </Flex>
 )

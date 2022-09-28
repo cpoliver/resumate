@@ -13,13 +13,13 @@ const email: ContactDetailsEmail = {
 
 const skype: ContactDetailsCustom = {
   type: "custom",
-  label: "Skype",
+  label: "skype",
   value: "testuser",
 }
 
 const telegram: ContactDetailsCustom = {
   type: "custom",
-  label: "Telegram",
+  label: "telegram",
   value: "testuser",
 }
 

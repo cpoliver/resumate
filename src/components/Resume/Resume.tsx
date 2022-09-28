@@ -7,12 +7,24 @@ import { Resume as ResumeType } from "types"
 export type ResumeProps = ResumeType
 
 export const Resume: React.FC<ResumeProps> = ({ name, title, contactDetails, links, summary, workHistory }) => (
-  <Stack>
-    <Name {...name} />
-    <Heading as="h3">{title}</Heading>
-    <ContactDetails contactDetails={contactDetails} />
-    <Links links={links} />
+  <Stack p={8} spacing={8}>
+    <Header name={name} title={title}>
+      <ContactDetails contactDetails={contactDetails} />
+      <Links links={links} />
+    </Header>
     <Summary {...summary} />
     <WorkHistory workHistory={workHistory} />
+  </Stack>
+)
+
+const Header: React.FC<Pick<ResumeProps, "name" | "title">> = ({ name, title, children }) => (
+  <Stack spacing={4}>
+    <Stack spacing={0}>
+      <Name {...name} />
+      <Heading as="h3" fontWeight="normal">
+        {title}
+      </Heading>
+    </Stack>
+    {children}
   </Stack>
 )
