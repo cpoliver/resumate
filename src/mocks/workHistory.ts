@@ -20,7 +20,8 @@ const capbase: WorkHistoryItem = {
   },
   items: [
     "Leading a team of developers spread across Europe and Asia",
-    "Mentoring junior developers through pair programming and code reviews• Building design system components using Theme UI to enforce design system constraints",
+    "Mentoring junior developers through pair programming and code reviews",
+    "Building design system components using Theme UI to enforce design system constraints",
     "Improving code quality by adding missing tests, TypeScript, and using new language features",
     "Collaborating with designers to improve design handover and tooling in Figma",
     "Working with stakeholders and project managers to estimate and plan user stories",
@@ -149,12 +150,12 @@ const sky: WorkHistoryItem = {
   workType: "contract",
   duration: {
     from: {
-      month: 1,
-      year: 1991,
+      month: 7,
+      year: 2016,
     },
     to: {
-      month: 2,
-      year: 1992,
+      month: 1,
+      year: 2017,
     },
   },
   items: [

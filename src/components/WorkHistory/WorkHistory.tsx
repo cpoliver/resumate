@@ -1,4 +1,4 @@
-import { Badge, Flex, List, ListItem, Stack, Text } from "@chakra-ui/react"
+import { Badge, Flex, Heading, Link, List, ListItem, Stack, Text } from "@chakra-ui/react"
 import React from "react"
 
 import { formatDuration } from "common/utils"
@@ -11,7 +11,7 @@ const getKey = (workHistoryItem: WorkHistoryItemProps) => `${workHistoryItem.com
 export type WorkHistoryProps = Pick<Resume, "workHistory">
 
 export const WorkHistory: React.FC<WorkHistoryProps> = ({ workHistory }) => (
-  <Stack gap={4}>
+  <Stack gap={6}>
     {workHistory.map((workHistoryItem) => (
       <WorkHistoryItem key={getKey(workHistoryItem)} {...workHistoryItem} />
     ))}
@@ -27,14 +27,22 @@ const WorkHistoryItem: React.FC<WorkHistoryItemProps> = ({
   items,
   technologies,
 }) => (
-  <Stack spacing={0}>
+  <Stack borderTopColor="whiteAlpha.200" borderTopWidth="1px" pt={4} spacing={2}>
     <Flex>
-      <Text>
-        {role} at {company.name}
-      </Text>
+      <Heading as="h4" flex={1} size="md">
+        {role}
+        <Text as="span" fontWeight="normal">
+          &nbsp;at&nbsp;
+        </Text>
+        <Link href={company.url ?? "#"} target="blank">
+          {company.name}
+        </Link>
+      </Heading>
+      <Text>{formatDuration(duration)}</Text>
+    </Flex>
+    <Flex>
       <Badge>{workType}</Badge>
     </Flex>
-    <Text>{formatDuration(duration)}</Text>
     <Text>{summary}</Text>
     <ItemList items={items} />
     <TechnologyList technologies={technologies} />
@@ -42,9 +50,9 @@ const WorkHistoryItem: React.FC<WorkHistoryItemProps> = ({
 )
 
 const ItemList: React.FC<Pick<WorkHistoryItemProps, "items">> = ({ items }) => (
-  <List>
+  <List as={Stack} spacing={2}>
     {items.map((item) => (
-      <ListItem key={item}>{item}</ListItem>
+      <ListItem key={item}>• {item}</ListItem>
     ))}
   </List>
 )

@@ -21,7 +21,7 @@ const Header: React.FC<Pick<ResumeProps, "name" | "title">> = ({ name, title, ch
   <Stack spacing={4}>
     <Stack spacing={0}>
       <Name {...name} />
-      <Heading as="h3" fontWeight="normal">
+      <Heading as="h4" fontStyle="italic" fontWeight="normal">
         {title}
       </Heading>
     </Stack>

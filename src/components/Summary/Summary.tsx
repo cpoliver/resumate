@@ -31,16 +31,12 @@ const Profile: React.FC<SummaryProps["profile"]> = ({ description }) => (
   </Stack>
 )
 
-const KeySkills: React.FC<{ keySkills: KeySkill[] }> = ({ keySkills }) => (
+const KeySkills: React.FC<{ keySkills: KeySkill[] }> = ({ children }) => (
   <Stack>
     <Heading as="h4" size="md">
       Key Skills
     </Heading>
-    <List as={Stack} spacing={2}>
-      {keySkills.map((keySkill) => (
-        <SummaryItem key={getKey(keySkill)} {...keySkill} />
-      ))}
-    </List>
+    <Stack spacing={2}>{children}</Stack>
   </Stack>
 )
 
@@ -61,21 +57,23 @@ const SummaryItemTechnicalSkill: React.FC<TechnicalSkill> = ({
   yearsExperience,
   skillLevel,
 }) => (
-  <Flex align="center" gap={2} maxW="50%">
+  <Flex align="center" bg="whiteAlpha.100" gap={2} maxW="50%" p={2}>
     <Box flex={1}>
-      <TechnologyIcon technology={technology} />
+      <TechnologyIcon technology={technology} hideLabel />
     </Box>
-    {description && <Text flex={1}>{description}</Text>}
-    {yearsExperience && (
-      <Text flex={1} fontSize="sm">
-        {yearsExperience} years
-      </Text>
-    )}
-    {skillLevel && (
-      <Box flex={1}>
-        <Badge size="sm">{skillLevel}</Badge>
-      </Box>
-    )}
+    <Stack flex={4} spacing={1}>
+      {description && <Text flex={1}>{description}</Text>}
+      {yearsExperience && (
+        <Text flex={1} fontSize="sm">
+          {yearsExperience} years
+        </Text>
+      )}
+      {skillLevel && (
+        <Box flex={1}>
+          <Badge size="sm">{skillLevel}</Badge>
+        </Box>
+      )}
+    </Stack>
   </Flex>
 )
 
@@ -89,27 +87,33 @@ const SummaryItemSoftSkill: React.FC<SoftSkill> = ({ description, yearsExperienc
 
 const SummaryItemEducation: React.FC<Education> = ({ institution, course, grade, duration }) => (
   <Stack spacing={0}>
-    <Text>{course}</Text>
-    <Text>{institution.name}</Text>
+    <Flex>
+      <Heading as="h4" flex={1} size="md">
+        {course}
+      </Heading>
+      {duration && <Text>{formatDuration(duration)}</Text>}
+    </Flex>
+    <Heading as="h4" fontWeight="medium" size="md">
+      {institution.name}
+    </Heading>
     {grade && <Text>{grade}</Text>}
-    {duration && (
-      <Flex>
-        <Text>{formatDuration(duration)}</Text>
-      </Flex>
-    )}
   </Stack>
 )
 
 const SummaryItemTraining: React.FC<Training> = ({ institution, course, duration }) => (
   <Stack spacing={0}>
-    <Text>{course}</Text>
-    <Text>{institution.name}</Text>
+    <Flex>
+      <Heading as="h4" flex={1} size="md">
+        {course}
+      </Heading>
+      {duration && <Text>{formatDuration(duration)}</Text>}
+    </Flex>
+    <Heading as="h4" fontWeight="medium" size="md">
+      {institution.name}
+    </Heading>
     {/* {grade && <Text>{grade}</Text>} */}
     {duration && (
       <Flex>
-        <Text>
-          {duration.from.month}/{duration.from.year}
-        </Text>
         <Text>{formatDuration(duration)}</Text>
       </Flex>
     )}
