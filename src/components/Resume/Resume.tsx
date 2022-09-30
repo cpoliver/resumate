@@ -1,18 +1,43 @@
 import { Heading, Stack } from "@chakra-ui/react"
 import React from "react"
 
-import { ContactDetails, Links, Name, Summary, WorkHistory } from "components"
+import {
+  ContactDetails,
+  Education,
+  Links,
+  Name,
+  Profile,
+  SoftSkills,
+  TechnicalSkills,
+  Training,
+  WorkHistory,
+} from "components"
 import { Resume as ResumeType } from "types"
 
 export type ResumeProps = ResumeType
 
-export const Resume: React.FC<ResumeProps> = ({ name, title, contactDetails, links, summary, workHistory }) => (
+export const Resume: React.FC<ResumeProps> = ({
+  name,
+  title,
+  contactDetails,
+  links,
+  profile,
+  softSkills,
+  technicalSkills,
+  education,
+  training,
+  workHistory,
+}) => (
   <Stack p={8} spacing={8}>
     <Header name={name} title={title}>
       <ContactDetails contactDetails={contactDetails} />
       <Links links={links} />
     </Header>
-    <Summary {...summary} />
+    <Profile {...profile} />
+    <SoftSkills softSkills={softSkills} />
+    <TechnicalSkills technicalSkills={technicalSkills} />
+    <Education education={education} />
+    <Training training={training} />
     <WorkHistory workHistory={workHistory} />
   </Stack>
 )
